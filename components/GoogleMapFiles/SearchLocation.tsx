@@ -71,7 +71,6 @@ export default function SearchLocation() {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
       dispatch(setLocationB({ lat, lng, address: formatted_address }));
-      console.log('locaB', locaB)
     });
   };
 
