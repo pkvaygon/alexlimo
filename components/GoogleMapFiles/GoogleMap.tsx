@@ -12,8 +12,8 @@ export default function Map() {
   };
   
   const center = {
-    lat: reduxLocation.lat || 0,
-    lng: reduxLocation.lng || 0,
+    lat: reduxLocation.lat || 41.888906572566796,
+    lng: reduxLocation.lng || -87.6264612342834,
   };
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
