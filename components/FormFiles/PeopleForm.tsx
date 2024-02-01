@@ -7,8 +7,8 @@ import { incrementTravellers, decrementTravellers, incrementKids, decrementKids,
 export default function PeopleForm(){
 const travellers = useSelector((state: RootState)=> state.map.results.travellers)
 const kids = useSelector((state: RootState)=> state.map.results.kids) 
-const bags = useSelector((state: RootState)=> state.map.results.bags)
- const dispatch = useDispatch();
+    const bags = useSelector((state: RootState) => state.map.results.bags)
+    const dispatch = useDispatch();
 
     const handleTravellersIncrement = () => {
         dispatch(incrementTravellers());
