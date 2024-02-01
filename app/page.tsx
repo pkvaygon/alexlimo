@@ -10,7 +10,7 @@ export default function Home() {
     <>
     <section className="w-full h-screen flex flex-col justify-center items-center">
       <div className="relative z-0 w-full h-full">
-        <BannerVideo />
+        {/* <BannerVideo /> */}
         <div className=" max-sm:w-[90%] max-sm:mx-auto gap-3 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-4xl font-bold max-sm:text-2xl ">The Best Chaffeur Company</h1>
           <h2 className="text-lg max-sm:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

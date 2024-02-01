@@ -1,72 +1,73 @@
 "use client";
-import React from 'react';
-import { GoogleMap, useJsApiLoader, MarkerF, Polyline } from '@react-google-maps/api';
-import { LocationClickedEvent, RootState } from '@/types';
+import React, { useState, useEffect, useMemo } from 'react';
+import { GoogleMap, useJsApiLoader, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
+import { RootState } from '@/types';
 import { useSelector } from 'react-redux';
 
 export default function Map() {
-  const reduxLocation = useSelector((state: RootState)=> state.map.location)
+  const reduxLocation = useSelector((state: RootState) => state.map.location);
   const containerStyle = {
     width: '100%',
-    height: '100%'
+    height: '100%',
   };
-  
+
   const center = {
     lat: reduxLocation.lat || 41.888906572566796,
     lng: reduxLocation.lng || -87.6264612342834,
   };
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string
-  })
+    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
+  });
 
-  // const [map, setMap] = React.useState<google.maps.Map | null>(null);
+  const [directions, setDirections] = useState(null);
 
-  // const onLoad = React.useCallback(function callback(map: google.maps.Map) {
-  //   // This is just an example of getting and using the map instance!!! don't just blindly copy!
-  //   const bounds = new window.google.maps.LatLngBounds(center);
-  //   map.fitBounds(bounds);
+  const fetchDirections = useMemo(() => {
+    return () => {
+      if (reduxLocation.lat !== null && reduxLocation.lng !== null) {
+        const destination = new google.maps.LatLng(41.98040859408443, -87.90890952190797);
 
-  //   setMap(map);
-  // }, [center]);
+        const directionsService = new google.maps.DirectionsService();
 
-  // const onUnmount = React.useCallback(function callback() {
-  //   setMap(null);
-  // }, []);
-const options = {
-  mapTypeControl: false,
-  streetViewControl: false,
-}
+        directionsService.route(
+          {
+            origin: new google.maps.LatLng(reduxLocation.lat, reduxLocation.lng),
+            destination: destination,
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (result: any, status) => {
+            if (status === google.maps.DirectionsStatus.OK) {
+              setDirections(result);
+            } else {
+              console.error(`Error fetching directions: ${status}`);
+            }
+          }
+        );
+      }
+    };
+  }, [reduxLocation.lat, reduxLocation.lng]);
+
+  useEffect(() => {
+    fetchDirections();
+  }, [fetchDirections]);
+
   function locationClicked(event: google.maps.MapMouseEvent) {
-  console.log(event?.latLng?.lat())
-  console.log(event?.latLng?.lng())
+    console.log(event?.latLng?.lat());
+    console.log(event?.latLng?.lng());
   }
+
   return isLoaded ? (
     <GoogleMap
-    options={options}
+      options={{ mapTypeControl: false, streetViewControl: false }}
       mapContainerStyle={containerStyle}
       center={center}
       zoom={13}
       onClick={locationClicked}
-      // onLoad={onLoad}
-      // onUnmount={onUnmount}
     >
-      {
-        reduxLocation.lat !== null && reduxLocation.lng !== null && (
-          <MarkerF position={{lat: reduxLocation.lat,lng: reduxLocation.lng}} />
-        )
-      }
-       <MarkerF position={{lat: 41.98040859408443,lng: -87.90890952190797}} />
-      {
-       reduxLocation.lat !== null && reduxLocation.lng !== null && (
-        <Polyline
-        path={[
-          { lat: reduxLocation.lat, lng: reduxLocation.lng },
-          { lat: 41.98040859408443, lng: -87.90890952190797 },
-        ]}
-        options={{ strokeColor: '#00FF00' }} // Цвет линии
-      />
-          )}
+      {directions && <DirectionsRenderer directions={directions} />}
     </GoogleMap>
-  ) : <div>Loading...</div>;
+  ) : (
+    <div>Loading...</div>
+  );
 }

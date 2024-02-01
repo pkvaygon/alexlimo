@@ -20,3 +20,8 @@ export interface GoogleMapStateProps {
 export interface RootState {
   map: GoogleMapStateProps;
 }
+export interface DirectionsResponse {
+  status: string;
+  geocoded_waypoints: any[];
+  routes: google.maps.DirectionsRoute[];
+}
