@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 
 export default function Map() {
   const reduxLocation = useSelector((state: RootState) => state.map.location);
+  const reduxLocationB = useSelector((state: RootState) => state.map.locationB);
   const containerStyle = {
     width: '100%',
     height: '100%',
@@ -25,11 +26,10 @@ export default function Map() {
 
   const fetchDirections = useMemo(() => {
     return () => {
-      if (reduxLocation.lat !== null && reduxLocation.lng !== null) {
-        const destination = new google.maps.LatLng(41.98040859408443, -87.90890952190797);
+      if (reduxLocation.lat !== null && reduxLocation.lng !== null && reduxLocationB.lat !== null && reduxLocationB.lng !== null) {
+        const destination = new google.maps.LatLng(reduxLocationB.lat, reduxLocationB.lng);
 
         const directionsService = new google.maps.DirectionsService();
-
         directionsService.route(
           {
             origin: new google.maps.LatLng(reduxLocation.lat, reduxLocation.lng),
@@ -46,7 +46,7 @@ export default function Map() {
         );
       }
     };
-  }, [reduxLocation.lat, reduxLocation.lng]);
+  }, [reduxLocation.lat, reduxLocation.lng,reduxLocationB.lat, reduxLocationB.lng]);
 
   useEffect(() => {
     fetchDirections();

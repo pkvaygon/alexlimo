@@ -13,9 +13,11 @@ export interface LocationClickedEvent {
   export interface LocationProps {
   lat: number | null;
   lng: number | null;
+  address?: string | null;
 }
 export interface GoogleMapStateProps {
   location: LocationProps;
+  locationB: LocationProps
 }
 export interface RootState {
   map: GoogleMapStateProps;
