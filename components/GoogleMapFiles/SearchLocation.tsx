@@ -38,10 +38,6 @@ export default function SearchLocation() {
     },
     debounce: 300,
   });
-  React.useEffect(() => {
-    setValue(loca ? loca.address : ''); 
-    setValueB(locaB ? locaB.address : '');
-  }, [loca, locaB,setValue,setValueB]);
 
   const ref = useOnclickOutside(() => {
     clearSuggestions();
