@@ -22,7 +22,7 @@ export default function RootLayout({
       <script
   defer
   src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_MAPS_API_KEY as string}&libraries=places`}
-></script>
+        ></script>
       </head>
       <body className={inter.className}>
         <Providers>

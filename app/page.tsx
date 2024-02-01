@@ -5,12 +5,13 @@ import private_driver from '@/public/private_driver.png'
 import Map from '@/components/GoogleMapFiles/GoogleMap'
 import DateComponent from '@/components/GoogleMapFiles/DatePicker';
 import SearchLocation from '@/components/GoogleMapFiles/SearchLocation';
+import HomeBanner from '@/components/HomeBanner';
 export default function Home() {
   return (
     <>
     <section className="w-full h-screen flex flex-col justify-center items-center">
-      <div className="relative z-0 w-full h-full">
-        {/* <BannerVideo /> */}
+        <div className="relative z-0 w-full h-full max-sm:overflow-visible overflow-hidden bg-black-800">
+          <HomeBanner/>
         <div className=" max-sm:w-[90%] max-sm:mx-auto gap-3 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-4xl font-bold max-sm:text-2xl ">The Best Chaffeur Company</h1>
           <h2 className="text-lg max-sm:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
