@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BannerVideo from './../components/BannerVideo';
 import private_driver from '@/public/private_driver.png'
-import Map from '@/components/GoogleMap'
-import DateComponent from '@/components/DatePicker';
+import Map from '@/components/GoogleMapFiles/GoogleMap'
+import DateComponent from '@/components/GoogleMapFiles/DatePicker';
+import SearchLocation from '@/components/GoogleMapFiles/SearchLocation';
 export default function Home() {
   return (
     <>
@@ -35,6 +36,7 @@ We love what we do in the world of finance.</p>
       </section>
       <section className="max-sm:h-[500px] container flex max-sm:flex-col-reverse justify-between items-start mt-3">
         <div className="w-1/2 max-sm:w-full">
+          <SearchLocation/>
           <DateComponent/>
         </div>
         <div className="w-1/2 max-sm:w-full h-[400px] max-sm:h-[300px]">
