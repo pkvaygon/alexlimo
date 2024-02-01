@@ -11,8 +11,8 @@ import { RootState } from "@/types";
 import {Input} from "@nextui-org/react";
 export default function SearchLocation() {
   const dispatch = useDispatch();
-  const loca = useSelector((state: RootState) => state.map.location);
-  const locaB = useSelector((state: RootState) => state.map.locationB);
+  const loca = useSelector((state: RootState) => state.map.results.pickup);
+  const locaB = useSelector((state: RootState) => state.map.results.dropoff);
   
   const {
     ready,
@@ -60,6 +60,7 @@ export default function SearchLocation() {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
       dispatch(setLocation({ lat, lng, address: formatted_address }));
+      // console.log('pickup',loca)
     });
   };
 
@@ -71,6 +72,7 @@ export default function SearchLocation() {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
       dispatch(setLocationB({ lat, lng, address: formatted_address }));
+      // console.log('dropoff',locaB)
     });
   };
 
@@ -120,12 +122,13 @@ export default function SearchLocation() {
     });
 
   return (
-    <div ref={ref} className="p-4 flex justify-between items-start">
-      <div className="w-1/2">
+    <div ref={ref} className="p-4 flex justify-center items-start gap-3 max-sm:flex-col">
+      <div className="w-1/2 max-sm:w-full relative">
       <Input
         type="text"
         variant="bordered"
-        label="Pick-up"
+          label="Pick-up"
+          radius='none'
         isClearable
         value={value || ''}
         onChange={handleInput}
@@ -133,10 +136,11 @@ export default function SearchLocation() {
         disabled={!ready}
         placeholder="Enter pickup address"
       />
-      {status === 'OK' && <ul>{renderSuggestions()}</ul>}
+      {status === 'OK' && <ul className="bg-white absolute z-10">{renderSuggestions()}</ul>}
       </div>
-<div className="w-1/2">
+<div className="w-1/2 max-sm:w-full">
         <Input
+          radius='none'
           type="text"
       onClear={() => clearInputB()}
         variant="bordered"
@@ -147,7 +151,7 @@ export default function SearchLocation() {
         disabled={!ready}
         placeholder="Enter drop-off address"
       />
-      {statusB === 'OK' && <ul>{renderSuggestionsB()}</ul>}
+      {statusB === 'OK' && <ul className="bg-white absolute z-10">{renderSuggestionsB()}</ul>}
 </div>
     </div>
   );

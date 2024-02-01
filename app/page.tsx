@@ -3,9 +3,10 @@ import Link from 'next/link';
 import BannerVideo from './../components/BannerVideo';
 import private_driver from '@/public/private_driver.png'
 import Map from '@/components/GoogleMapFiles/GoogleMap'
-import DateComponent from '@/components/GoogleMapFiles/DatePicker';
-import SearchLocation from '@/components/GoogleMapFiles/SearchLocation';
+import DateComponent from '@/components/FormFiles/DatePicker';
+import SearchLocation from '@/components/FormFiles/SearchLocation';
 import HomeBanner from '@/components/HomeBanner';
+import PeopleForm from '@/components/FormFiles/PeopleForm';
 export default function Home() {
   return (
     <>
@@ -35,10 +36,13 @@ We love what we do in the world of finance.</p>
           </div>
         </div>
       </section>
-      <section className="max-sm:h-[500px] container flex max-sm:flex-col-reverse justify-between items-start mt-3">
+      <section className="max-sm:h-auto flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
         <div className="w-1/2 max-sm:w-full">
           <DateComponent/>
           <SearchLocation/>
+          <div className="w-full p-4">
+<PeopleForm/>
+          </div>
         </div>
         <div className="w-1/2 max-sm:w-full h-[400px] max-sm:h-[300px]">
         <Map/>

@@ -6,14 +6,14 @@ import Autoplay from 'embla-carousel-autoplay'
 import imageByIndex from '@/utils';
 import Image from 'next/image';
 export default function HomeBanner() {
-    const options: EmblaOptionsType = { align: 'start', loop: true }
-const SLIDE_COUNT = 3
-const slides = Array.from(Array(SLIDE_COUNT).keys())
-type PropType = {
+  const options: EmblaOptionsType = { align: 'start', loop: true }
+  const SLIDE_COUNT = 3
+  const slides = Array.from(Array(SLIDE_COUNT).keys())
+  type PropType = {
     slides: number[]
     options?: EmblaOptionsType
   }
-  const [emblaRef] = useEmblaCarousel(options, [Autoplay()])
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 3000})])
     return (
         <section className="w-full h-full">
         <div className="embla">

@@ -8,7 +8,7 @@ import { DatePicker, TimePicker } from '@mui/x-date-pickers';
 
 const DateComponent: React.FC = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 w-full flex justify-between items-start">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DemoContainer
           components={[
