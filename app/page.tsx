@@ -17,8 +17,9 @@ export default function Home() {
           <HomeBanner/>
         <div className=" max-sm:w-[90%] max-sm:mx-auto gap-3 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-4xl font-bold max-sm:text-2xl ">The Best Chaffeur Company</h1>
-          <h2 className="text-lg max-sm:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua</h2>
+          <h2 className="text-lg max-sm:text-sm">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
+integrity and reliability resonate throughout the organization. We look forward to you or your organization joining our family of
+satisfied clients.</h2>
 <Link href="order-ride" className="px-12 py-4 bg-blue-800 text-white">Order Ride</Link>
         </div>
       </div>

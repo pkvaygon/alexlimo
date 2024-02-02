@@ -44,3 +44,8 @@ export interface VehicleProps{
     bags: number,
     price: number,
 }
+export interface BlogCardsProps{
+  image:string,
+  label: string,
+  description: string,
+}
