@@ -36,7 +36,8 @@ const kids = useSelector((state: RootState)=> state.map.results.kids)
     const handleBagsDecrement = () => {
         dispatch(decrementBags());
     };
-    const [scrollBehavior, setScrollBehavior] = React.useState('normal');
+    type ScrollBehavior = "normal" | "inside" | "outside";
+    const [scrollBehavior, setScrollBehavior] = React.useState<ScrollBehavior>('normal');
 
   React.useEffect(() => {
     const handleResize = () => {
