@@ -8,7 +8,11 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bartkey: ["BARTKEY", "sans-serif"],
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

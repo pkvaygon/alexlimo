@@ -24,6 +24,7 @@ export default function HomeBanner() {
               <div className="embla__slide__number">
               </div>
               <Image
+                priority
                 className="embla__slide__img"
                 src={imageByIndex(index)}
                 alt="Your alt text"

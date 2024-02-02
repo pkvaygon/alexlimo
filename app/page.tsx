@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BannerVideo from './../components/BannerVideo';
 import private_driver from '@/public/private_driver.png'
 import Map from '@/components/GoogleMapFiles/GoogleMap'
 import DateComponent from '@/components/FormFiles/DatePicker';
 import SearchLocation from '@/components/FormFiles/SearchLocation';
 import HomeBanner from '@/components/HomeBanner';
 import PeopleForm from '@/components/FormFiles/PeopleForm';
-import PaymentFormComponent from '@/components/SquarePayment/PaymentForm'
+import Blog from './../components/Blog';
+import ad from '@/public/adpicture.jpg'
 export default function Home() {
   
   return (
@@ -38,6 +38,13 @@ We love what we do in the world of finance.</p>
           </div>
         </div>
       </section>
+      <article className="relative max-sm:py-5 border-">
+        <div className=' font-bartkey absolute z-10 text-lg sm:text-[36px] sm:w-[600px] left-16 top-24 text-white'>Make your trip an unforgettable moment together.</div>
+        <Image priority className="brightness-50 w-full h-[300px] object-cover object-top backdrop-brightness-50" src={ad} alt="Order limo"/>
+      </article>
+      <article className="container py-8">
+        <Blog/>
+      </article>
       <section className="max-sm:h-auto flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
         <div className="w-1/2 max-sm:w-full">
           <DateComponent/>
