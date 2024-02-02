@@ -22,7 +22,6 @@ export default function HomeBanner() {
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
-                <span>{index + 1}</span>
               </div>
               <Image
                 className="embla__slide__img"
