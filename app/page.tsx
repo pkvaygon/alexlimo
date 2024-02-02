@@ -7,10 +7,12 @@ import DateComponent from '@/components/FormFiles/DatePicker';
 import SearchLocation from '@/components/FormFiles/SearchLocation';
 import HomeBanner from '@/components/HomeBanner';
 import PeopleForm from '@/components/FormFiles/PeopleForm';
+import PaymentFormComponent from '@/components/SquarePayment/PaymentForm'
 export default function Home() {
+  
   return (
     <>
-    <section className="w-full h-screen flex flex-col justify-center items-center">
+    <section className="w-full h-auto flex flex-col justify-center items-center">
         <div className="relative z-0 w-full h-full max-sm:overflow-visible overflow-hidden bg-black-800">
           <HomeBanner/>
         <div className=" max-sm:w-[90%] max-sm:mx-auto gap-3 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
@@ -39,7 +41,7 @@ We love what we do in the world of finance.</p>
       <section className="max-sm:h-auto flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
         <div className="w-1/2 max-sm:w-full">
           <DateComponent/>
-          <SearchLocation/>
+          <SearchLocation />
           <div className="w-full p-4">
 <PeopleForm/>
           </div>
@@ -48,6 +50,7 @@ We love what we do in the world of finance.</p>
         <Map/>
         </div>
       </section>
+      
     </>
   );
 }

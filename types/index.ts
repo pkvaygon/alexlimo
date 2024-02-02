@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type NavlinksProps = {
     id: number;
     label: string;
@@ -34,4 +36,11 @@ export interface DirectionsResponse {
   status: string;
   geocoded_waypoints: any[];
   routes: google.maps.DirectionsRoute[];
+}
+export interface VehicleProps{
+    image: string,
+    name: string,
+    passengers: number,
+    bags: number,
+    price: number,
 }
