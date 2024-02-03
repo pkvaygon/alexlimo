@@ -9,13 +9,16 @@ import PeopleForm from '@/components/FormFiles/PeopleForm';
 import Footer from '@/components/Footer'
 import Blog from './../components/Blog';
 import ad from '@/public/adpicture.jpg'
+import BannerVideo from '@/components/BannerVideo'
+
 export default function Home() {
   
   return (
     <>
     <section className="w-full h-screen flex flex-col justify-center items-center">
         <div className="relative z-0 w-full h-screen max-sm:overflow-visible overflow-hidden bg-black-800">
-          <HomeBanner/>
+          {/* <HomeBanner/> */}
+          <BannerVideo/>
         <div className=" max-sm:w-[90%] max-sm:mx-auto gap-3 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-4xl font-bold max-sm:text-2xl ">The Best Chaffeur Company</h1>
           <h2 className="text-lg max-sm:text-sm">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
@@ -47,17 +50,17 @@ We love what we do in the world of finance.</p>
       <article className="container py-8">
         <Blog/>
       </article>
-      <section className="max-sm:h-auto flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
-        <div className="w-1/2 max-sm:w-full">
+      <section className="max-sm:h-auto h-[420px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
+        <div className="w-1/2 max-sm:w-full h-full flex flex-col items-center justify-between">
           <DateComponent/>
           <SearchLocation />
           <div className="w-full p-4">
-          <PeopleForm/>
-        </div>
-        </div>
-          <div className="w-1/2 max-sm:w-full h-[400px] max-sm:h-[300px]">
-            <Map/>
+            <PeopleForm/>
           </div>
+        </div>
+          <div className="w-1/2 max-sm:w-full h-full max-sm:h-[300px]">
+        <Map/>
+        </div>
       </section>
       <Footer/>
     </>
