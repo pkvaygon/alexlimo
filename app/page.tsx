@@ -6,6 +6,7 @@ import DateComponent from '@/components/FormFiles/DatePicker';
 import SearchLocation from '@/components/FormFiles/SearchLocation';
 import HomeBanner from '@/components/HomeBanner';
 import PeopleForm from '@/components/FormFiles/PeopleForm';
+import Footer from '@/components/Footer'
 import Blog from './../components/Blog';
 import ad from '@/public/adpicture.jpg'
 export default function Home() {
@@ -58,7 +59,7 @@ We love what we do in the world of finance.</p>
         <Map/>
         </div>
       </section>
-      
+      <Footer/>
     </>
   );
 }
