@@ -20,7 +20,6 @@ export default function BlogCards({ images, ...props }: { images: BlogCardsProps
                             <h3 className="text-large font-medium">{el.label}</h3>
                             <div className="flex flex-col gap-3 pt-2 text-small text-default-400">
                                 <p>{el.description}</p>
-                                <p>Acme supports YouTube, Twitch, Vimeo and more!</p>
                             </div>
                         </div>
                     </CardBody>
