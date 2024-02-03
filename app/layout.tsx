@@ -7,8 +7,8 @@ import Header from "@/components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Elite Luxury Limo",
-  applicationName: 'Elite Luxury Limo',
+  title: "Elite Luxury Limousine",
+  applicationName: 'Elite Luxury Limousine',
   referrer: 'origin-when-cross-origin',
   category: 'service',
   description: `We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   creator: 'Askar Zhaanbaev',
-  publisher: 'Alex limoseoum',
+  publisher: 'Alex limousine',
   alternates: {
     canonical: '/',
     languages: {

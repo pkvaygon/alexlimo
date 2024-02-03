@@ -1,12 +1,20 @@
 @import url('https://fonts.cdnfonts.com/css/bartkey');
-@import url('https://fonts.cdnfonts.com/css/magnolia-script');
+@import url('https://fonts.cdnfonts.com/css/times-new-roman');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body{
+width: 100%;
+}
 .container{
 width: 90%;
 margin: 0 auto;
+}
+.css-4jnixx-MuiStack-root{
+width: 100%;
+}
+.css-11a8txn-MuiStack-root{
+width: 100%;
 }
 mux-player {
   width: 100%;

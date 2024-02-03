@@ -122,7 +122,7 @@ export default function SearchLocation() {
     });
 
   return (
-    <div ref={ref} className="p-4 flex justify-center items-start gap-3 max-sm:flex-col">
+    <div ref={ref} className="p-4  flex justify-between items-start gap-3 max-sm:flex-col">
       <div className="w-1/2 max-sm:w-full relative">
       <Input
         type="text"

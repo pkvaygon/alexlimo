@@ -42,7 +42,7 @@ export default function Blog(){
     },
     ]
 return(
-    <div className="grid grid-cols-1 grid-flow-row sm:grid-cols-2 sm:grid-rows-2 gap-y-3">
+    <div className="grid grid-cols-1 grid-flow-row sm:grid-cols-1 md:grid-cols-2  sm:grid-rows-2  max-lg:gap-y-3">
         <BlogCards images={images} />
     </div>
     )

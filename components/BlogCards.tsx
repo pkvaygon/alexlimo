@@ -8,12 +8,12 @@ export default function BlogCards({ images, ...props }: { images: BlogCardsProps
         <>
             {images.map((el, index) => (
                 <Card key={index} className="w-full" radius="none" shadow="none" {...props}>
-                    <CardBody className="flex flex-row flex-wrap p-0 sm:flex-nowrap">
+                    <CardBody className="flex max-lg:flex-col flex-row  flex-wrap p-0 sm:flex-nowrap">
                         <Image
                         radius="none"
                             removeWrapper
                             alt={el.label}
-                            className="h-auto w-full flex-none object-cover object-top md:w-48"
+                            className="h-auto max-md:h-[340px] w-full flex-none object-cover max-lg:h-[340px] lg:w-48 object-top "
                             src={el.image.toString()}
                         />
                         <div className="px-4 py-5">

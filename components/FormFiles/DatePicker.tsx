@@ -8,16 +8,16 @@ import { DatePicker, TimePicker } from '@mui/x-date-pickers';
 
 const DateComponent: React.FC = () => {
   return (
-    <div className="p-4 w-full flex justify-between items-start">
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <div className="container flex justify-between items-start">
+      <LocalizationProvider  dateAdapter={AdapterDayjs}>
         <DemoContainer
           components={[
             'DatePicker',
             'TimePicker',
           ]}
         >
-          <DemoItem label="Pickup Date">
-            <DatePicker defaultValue={dayjs(new Date())} />
+          <DemoItem  label="Pickup Date">
+            <DatePicker  defaultValue={dayjs(new Date())} />
           </DemoItem>
           <DemoItem label="Pickup Time">
             <TimePicker defaultValue={dayjs('2022-04-17T15:30')} />
