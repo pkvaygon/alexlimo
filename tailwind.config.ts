@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         bartkey: ["BARTKEY", "sans-serif"],
+        magnolia: ["Magnolia Script", "sans-serif"]
       },
     },
   },

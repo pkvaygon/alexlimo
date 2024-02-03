@@ -52,12 +52,12 @@ We love what we do in the world of finance.</p>
           <DateComponent/>
           <SearchLocation />
           <div className="w-full p-4">
-<PeopleForm/>
+          <PeopleForm/>
+        </div>
+        </div>
+          <div className="w-1/2 max-sm:w-full h-[400px] max-sm:h-[300px]">
+            <Map/>
           </div>
-        </div>
-        <div className="w-1/2 max-sm:w-full h-[400px] max-sm:h-[300px]">
-        <Map/>
-        </div>
       </section>
       <Footer/>
     </>
