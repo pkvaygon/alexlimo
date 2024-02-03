@@ -10,9 +10,10 @@ import Footer from '@/components/Footer'
 import Blog from './../components/Blog';
 import ad from '@/public/adpicture.jpg'
 import BannerVideo from '@/components/BannerVideo'
+import SelectService from '@/components/FormFiles/SelectService';
 
 export default function Home() {
-  
+
   return (
     <>
     <section className="w-full h-screen flex flex-col justify-center items-center">
@@ -51,14 +52,15 @@ We love what we do in the world of finance.</p>
         <Blog/>
       </article>
       <section className="max-sm:h-auto h-[520px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
-        <div className="w-1/2 max-sm:w-full h-full flex flex-col items-center justify-between">
+        <div className=" w-1/2 max-sm:w-full h-full flex flex-col items-start justify-start">
+          <SelectService/>
           <DateComponent/>
           <SearchLocation />
-          <div className="w-full p-4">
+          <div className="w-full px-4">
             <PeopleForm/>
           </div>
         </div>
-          <div className="w-1/2 max-sm:w-full h-full max-sm:h-[300px]">
+          <div className="w-1/2 max-sm:w-full h-1/2 max-md:h-full md:h-[500px] max-sm:h-[300px]">
         <Map/>
         </div>
       </section>

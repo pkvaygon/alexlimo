@@ -122,12 +122,12 @@ export default function SearchLocation() {
     });
 
   return (
-    <div ref={ref} className="p-4  flex justify-between items-start gap-3 max-sm:flex-col">
+    <div ref={ref} className="p-4 w-full  flex justify-between items-start gap-3 max-sm:flex-col">
       <div className="w-1/2 max-sm:w-full relative">
       <Input
         type="text"
         variant="bordered"
-          label="Pick-up"
+          label="Pick-up address"
           radius='none'
         isClearable
         value={value || ''}
@@ -144,7 +144,7 @@ export default function SearchLocation() {
           type="text"
       onClear={() => clearInputB()}
         variant="bordered"
-        label="Drop-off"
+        label="Drop-off address"
         isClearable
         value={valueB ||''}
         onChange={handleInputB}

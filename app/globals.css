@@ -10,18 +10,7 @@ width: 100%;
 width: 90%;
 margin: 0 auto;
 }
-.css-4jnixx-MuiStack-root{
-width: 100%;
-}
-.css-11a8txn-MuiStack-root{
-width: 100%;
-}
-mux-player {
-  width: 100%;
-  margin: 0;
-  --media-object-fit: cover;
-  --media-object-position: center;
-}
+
 .header_blur{
   backdrop-filter: blur(0px);
    background-color: rgba(255, 255, 255, 0); 

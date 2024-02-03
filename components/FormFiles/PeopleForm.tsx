@@ -4,8 +4,9 @@ import { RootState } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
 import { incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags } from '@/store/googleMapSlice'
-import {Card, CardHeader, CardBody, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {ButtonGroup,Card, CardHeader, CardBody, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
+
 export default function PeopleForm(){
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
 const travellers = useSelector((state: RootState)=> state.map.results.travellers)
@@ -55,48 +56,36 @@ const kids = useSelector((state: RootState)=> state.map.results.kids)
   }, []);
 return(
     <>
-    <div className='flex flex-col gap-3'>
-    <section className='flex gap-3 max-sm:flex-col'>
-        <div className=" sm:flex-1 flex flex-col gap-3">
+    <div className='flex flex-col gap-3 h-auto mb-10'>
+    <section className='flex gap-3 flex-wrap h-auto '>
+        <div className="max-lg:items-start flex-1 flex flex-col gap-3">
             <span>Travellers</span>
-            <div className="bg-[#F5F5F5] p-3 flex justify-between items-center">
-                <button onClick={handleTravellersDecrement}>
-                    <MinusIcon />
-                </button>
-                <span className="font-semibold leading-7 text-lg">{travellers}</span>
-                <button onClick={handleTravellersIncrement}>
-                    <PlusIcon />
-                </button>
-            </div>
+            <ButtonGroup radius="none" size="md" className="flex justify-stretch items-stretch w-full">
+      <Button onClick={handleTravellersDecrement} isIconOnly><MinusIcon /></Button>
+      <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{travellers}</Button>
+      <Button onClick={handleTravellersIncrement} isIconOnly><PlusIcon /></Button>
+    </ButtonGroup>
         </div>
-        <div className=" sm:flex-1 flex flex-col gap-3">
+        <div className="max-lg:items-start flex-1  flex flex-col gap-3">
             <span>Kids</span>
-            <div className="bg-[#F5F5F5] p-3 flex justify-between items-center">
-                <button onClick={handleKidsDecrement}>
-                    <MinusIcon />
-                </button>
-                <span className="font-semibold leading-7 text-lg">{kids}</span>
-                <button onClick={handleKidsIncrement}>
-                    <PlusIcon />
-                </button>
-            </div>
+            <ButtonGroup radius="none" size="md" className="flex justify-stretch items-stretch w-full">
+      <Button onClick={handleKidsDecrement} isIconOnly><MinusIcon /></Button>
+      <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{kids}</Button>
+      <Button onClick={handleKidsIncrement} isIconOnly><PlusIcon /></Button>
+    </ButtonGroup>
         </div>
-        <div className=" sm:flex-1 flex flex-col gap-3">
+        <div className="max-lg:items-start flex-1  flex flex-col gap-3">
             <span>Bags</span>
-            <div className="bg-[#F5F5F5] p-3 flex justify-between items-center">
-                <button onClick={handleBagsDecrement}>
-                    <MinusIcon />
-                </button>
-                <span className="font-semibold leading-7 text-lg">{bags}</span>
-                <button onClick={handleBagsIncrement}>
-                    <PlusIcon />
-                </button>
-            </div>
-        <Button onPress={onOpen} className="bg-black  text-white ml-auto px-6" radius="none">
-        Confirm
-    </Button>
+            <ButtonGroup size="md" radius="none" className="flex justify-stretch items-stretch w-full">
+      <Button onClick={handleBagsDecrement} isIconOnly><MinusIcon /></Button>
+      <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{bags}</Button>
+      <Button onClick={handleBagsIncrement} isIconOnly><PlusIcon /></Button>
+    </ButtonGroup>
         </div>
     </section>
+        <Button onPress={onOpen} className="bg-black lg:w-full  text-white mr-auto px-8" radius="none">
+        Confirm
+    </Button>   
 </div>
 <Modal scrollBehavior={scrollBehavior} size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
