@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags } from '@/store/googleMapSlice'
 import {ButtonGroup,Card, CardHeader, CardBody, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
+import { CldImage } from 'next-cloudinary';
 
 export default function PeopleForm(){
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -96,21 +97,21 @@ return(
                 {
                 vehicles.map((el,index)=>(
                     <Card key={index} isFooterBlurred className="w-full h-[300px]">
-                    <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                    {/* <CardHeader className="absolute z-10 top-1 flex-col items-start">
                       <p className="text-tiny text-white/60 uppercase font-bold">Your day your way</p>
                       <h4 className="text-white/90 font-medium text-xl">{el.name}</h4>
-                    </CardHeader>
-                    <Image
-                      removeWrapper
-                      alt="Relaxing app background"
-                      className="z-0 w-full h-full object-contain"
+                    </CardHeader> */}
+                    <CldImage
+                        width="600"
+                      height="600"
+                      alt={el.label}
                       src={el.image}
-                    />
+        />
                     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                       <div className="flex flex-grow gap-2 items-center">
                         <Image
                           alt="Breathing app icon"
-                          className="rounded-full w-10 h-11 bg-black"
+                          className="rounded-full w-10 h-11 bg-black object-center"
                           src="/images/breathing-app-icon.jpeg"
                         />
                         <div className="flex flex-col">

@@ -18,6 +18,7 @@ export interface LocationClickedEvent {
   address?: string | null;
 }
 export interface ResultsProps{
+  serviceDetail: string,
   pickup: string | null,
   dropoff: string | null,
   travellers: number,

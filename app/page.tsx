@@ -10,8 +10,7 @@ import Footer from '@/components/Footer'
 import Blog from './../components/Blog';
 import ad from '@/public/adpicture.jpg'
 import BannerVideo from '@/components/BannerVideo'
-import SelectService from '@/components/FormFiles/SelectService';
-
+import SelectService from '@/components/FormFiles/SelectService'
 export default function Home() {
 
   return (
@@ -25,7 +24,7 @@ export default function Home() {
           <h2 className="text-lg max-sm:text-sm  max:md:text-md w-full">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
 integrity and reliability resonate throughout the organization. We look forward to you or your organization joining our family of
 satisfied clients.</h2>
-<Link href="order-ride" className="px-12 py-4 bg-blue-800 text-white">Make a Reservation</Link>
+<Link href="order-ride" className="px-12 py-4 bg-[#afa581] text-lg rounded-sm text-white">Make a Reservation</Link>
         </div>
       </div>
       </section>

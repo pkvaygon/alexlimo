@@ -1,4 +1,4 @@
-import { GoogleMapStateProps, LocationProps } from "@/types";
+import { GoogleMapStateProps, LocationProps, ResultsProps } from "@/types";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: GoogleMapStateProps = {
@@ -13,6 +13,7 @@ const initialState: GoogleMapStateProps = {
         address: null,
     },
     results: {
+        serviceDetail: 'from',
         pickup: null,
         dropoff: null,
         travellers: 0,
@@ -25,6 +26,9 @@ export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
+        chooseServiceDetail: (state, action: PayloadAction<string>) => {
+            state.results.serviceDetail = action.payload;
+        },
         setLocation: (state, action: PayloadAction<LocationProps>) => {
             const { lat, lng, address } = action.payload;
             state.location = { lat, lng, address };
@@ -98,7 +102,7 @@ export const googleMapSlice = createSlice({
     },
 });
 
-export const { setLocation, setLocationB, clearLocation, clearLocationB,  incrementTravellers,
+export const { chooseServiceDetail,setLocation, setLocationB, clearLocation, clearLocationB,  incrementTravellers,
     decrementTravellers,
     incrementKids,
     decrementKids,
