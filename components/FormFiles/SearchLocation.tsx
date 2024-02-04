@@ -125,6 +125,7 @@ export default function SearchLocation() {
     <div ref={ref} className="p-4 w-full  flex justify-between items-start gap-3 max-sm:flex-col">
       <div className="w-1/2 max-sm:w-full relative">
       <Input
+      isRequired
         type="text"
         variant="bordered"
           label="Pick-up address"
@@ -140,6 +141,7 @@ export default function SearchLocation() {
       </div>
 <div className="w-1/2 max-sm:w-full">
         <Input
+        isRequired
           radius='none'
           type="text"
       onClear={() => clearInputB()}

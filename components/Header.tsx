@@ -28,19 +28,19 @@ const closeMenu = () => {
         </NavbarBrand>
         </NavbarContent>
         <NavbarMenu className=" dark h-auto py-3 backdrop-blur-sm bg-black/30">
-                {navlinks.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
+                {navlinks.map((el) => (
+                    <NavbarMenuItem key={el.id}>
                         <Link
                              className={`${
-                              pathname === item.href
+                              pathname === el.href
                                 ? 'text-white'
                                 : 'text-gray/800 hover:backdrop-blur-md hover:bg-black/30'
                             } w-full p-1 my-1 text-white`}
-                            href={item.href}
+                            href={el.href}
                             size="lg"
                             onClick={closeMenu}
                         >
-                            {item.label}
+                            {el.label}
                         </Link>
                     </NavbarMenuItem>
                 ))}

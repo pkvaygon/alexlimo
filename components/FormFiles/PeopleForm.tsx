@@ -59,23 +59,23 @@ return(
     <div className='flex flex-col gap-3 h-auto mb-10'>
     <section className='flex gap-3 flex-wrap h-auto '>
         <div className="max-lg:items-start flex-1 flex flex-col gap-3">
-            <span>Travellers</span>
+            <span>Passengers</span>
             <ButtonGroup radius="none" size="md" className="flex justify-stretch items-stretch w-full">
       <Button onClick={handleTravellersDecrement} isIconOnly><MinusIcon /></Button>
       <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{travellers}</Button>
       <Button onClick={handleTravellersIncrement} isIconOnly><PlusIcon /></Button>
     </ButtonGroup>
         </div>
-        <div className="max-lg:items-start flex-1  flex flex-col gap-3">
+        {/* <div className="max-lg:items-start flex-1  flex flex-col gap-3">
             <span>Kids</span>
             <ButtonGroup radius="none" size="md" className="flex justify-stretch items-stretch w-full">
       <Button onClick={handleKidsDecrement} isIconOnly><MinusIcon /></Button>
       <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{kids}</Button>
       <Button onClick={handleKidsIncrement} isIconOnly><PlusIcon /></Button>
     </ButtonGroup>
-        </div>
+        </div> */}
         <div className="max-lg:items-start flex-1  flex flex-col gap-3">
-            <span>Bags</span>
+            <span>Luggage</span>
             <ButtonGroup size="md" radius="none" className="flex justify-stretch items-stretch w-full">
       <Button onClick={handleBagsDecrement} isIconOnly><MinusIcon /></Button>
       <Button className="font-semibold leading-7 text-lg" isDisabled isIconOnly>{bags}</Button>
@@ -84,7 +84,7 @@ return(
         </div>
     </section>
         <Button onPress={onOpen} className="bg-black lg:w-full  text-white mr-auto px-8" radius="none">
-        Confirm
+        Check Pricing
     </Button>   
 </div>
 <Modal scrollBehavior={scrollBehavior} size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
