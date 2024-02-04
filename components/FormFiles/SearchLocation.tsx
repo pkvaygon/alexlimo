@@ -126,7 +126,6 @@ export default function SearchLocation() {
     );
 
     React.useEffect(() => {
-      console.log('results',allResult)
       if (hours !== null && hours !== undefined && !isNaN(Number(hours))) {
         dispatch(setServiceHours(Number(hours)));
       }

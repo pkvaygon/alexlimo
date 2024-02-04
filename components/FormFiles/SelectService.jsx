@@ -31,8 +31,8 @@ export default function SelectService() {
         airportName: airports[0].name
       }));
     }
-    console.log("airportName", airportName)
-    console.log("aiports.name",airports[0].name)
+    // console.log("airportName", airportName)
+    // console.log("aiports.name",airports[0].name)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 React.useEffect(()=>{
