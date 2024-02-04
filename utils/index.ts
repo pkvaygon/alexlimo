@@ -1,4 +1,4 @@
-import { NavlinksProps,VehicleProps } from "@/types";
+import { NavlinksProps,VehicleProps,AiportProps } from "@/types";
 import { StaticImageData } from "next/image";
 
 
@@ -63,3 +63,34 @@ price: 162.14,
 // terms & conditions cope text
 // change we who we are description text
 // godaddy hosting website
+
+export const airports: AiportProps[] = [
+    {
+        key: 'ohare',
+        name: "O'Hare International Airport",
+        address: '10000 W Balmoral Ave, Chicago, IL 60666',
+        lat: 41.9802452,
+        lng: -87.9115595,
+    },
+    {
+        key: 'midway',
+        name: "Chicago Midway International Airport",
+        address: '5700 S Cicero Ave, Chicago, IL 60638',
+        lat: 41.7867799,
+        lng: -87.7547633,
+    },
+    {
+        key: 'executive',
+        name: "Chicago Executive Airport-PWK",
+        address: '1020 Plant Rd, Wheeling, IL 60090',
+        lat: 42.1161327,
+        lng: -87.9041804,
+    },
+    {
+        key: 'coleman',
+        name: "B. Coleman Aviation",
+        address: '5701 Industrial Hwy, Gary, IN 46406',
+        lat: 41.6011247,
+        lng: -87.4237198,
+    },
+]

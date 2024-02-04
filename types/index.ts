@@ -18,7 +18,9 @@ export interface LocationClickedEvent {
   address?: string | null;
 }
 export interface ResultsProps{
+  airportName: string,
   serviceDetail: string,
+  hours?: number;
   pickup: string | null,
   dropoff: string | null,
   travellers: number,
@@ -29,6 +31,7 @@ export interface GoogleMapStateProps {
   location: LocationProps;
   locationB: LocationProps;
   results: ResultsProps;
+  checkPricing: boolean
 }
 export interface RootState {
   map: GoogleMapStateProps;
@@ -49,4 +52,12 @@ export interface BlogCardsProps{
   image:string,
   label: string,
   description: string,
+}
+
+export interface AiportProps{
+  key: string,
+  name: string,
+  address: string,
+  lat: number,
+  lng: number,
 }

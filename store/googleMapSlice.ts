@@ -14,27 +14,46 @@ const initialState: GoogleMapStateProps = {
     },
     results: {
         serviceDetail: 'from',
-        pickup: null,
+        airportName: '',
+        hours: 1,
+          pickup: null,
         dropoff: null,
         travellers: 0,
         kids: 0,
         bags: 0
-    }
+    },
+    checkPricing: true
 };
 
 export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
+        setServiceHours: (state, action: PayloadAction<number>) => {
+            state.results.hours = action.payload;
+        },
+        changeCheckStatus: (state, action: PayloadAction<boolean>)=>{
+        state.checkPricing = action.payload
+        },
         chooseServiceDetail: (state, action: PayloadAction<string>) => {
             state.results.serviceDetail = action.payload;
         },
-        setLocation: (state, action: PayloadAction<LocationProps>) => {
-            const { lat, lng, address } = action.payload;
+        setLocation: (state, action: PayloadAction<LocationProps & { airportName?: string }>) => {
+            const { lat, lng, address, airportName } = action.payload;
             state.location = { lat, lng, address };
             state.results = {
               ...state.results,
               pickup: address ?? null,
+              airportName: airportName ?? '',
+            };
+        },
+        setLocationB: (state, action: PayloadAction<LocationProps & {airportName?: string}>) => {
+            const { lat, lng, address, airportName} = action.payload;
+            state.locationB = { lat, lng, address };
+            state.results = {
+              ...state.results,
+                dropoff: address ?? null,
+                airportName: airportName ?? '',
           };
         },
         clearLocation: (state) => {
@@ -52,14 +71,7 @@ export const googleMapSlice = createSlice({
                 address: null,
             };
         },
-        setLocationB: (state, action: PayloadAction<LocationProps>) => {
-            const { lat, lng, address } = action.payload;
-            state.locationB = { lat, lng, address };
-            state.results = {
-              ...state.results,
-              dropoff: address ?? null,
-          };
-        },
+       
 
 
         incrementTravellers: (state) => {
@@ -107,6 +119,9 @@ export const { chooseServiceDetail,setLocation, setLocationB, clearLocation, cle
     incrementKids,
     decrementKids,
     incrementBags,
-    decrementBags, } = googleMapSlice.actions;
+    decrementBags,
+    changeCheckStatus,
+    setServiceHours,
+} = googleMapSlice.actions;
 
 export default googleMapSlice.reducer;

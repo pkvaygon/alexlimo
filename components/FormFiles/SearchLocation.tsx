@@ -6,14 +6,16 @@ import usePlacesAutocomplete, {
   } from "use-places-autocomplete";
   import useOnclickOutside from "react-cool-onclickoutside";
 import { useDispatch, useSelector } from "react-redux";
-import { setLocation,setLocationB,clearLocation,clearLocationB } from "@/store/googleMapSlice";
+import { setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours} from "@/store/googleMapSlice";
 import { RootState } from "@/types";
 import {Input} from "@nextui-org/react";
 export default function SearchLocation() {
   const dispatch = useDispatch();
+  const serviceDetail = useSelector((state: RootState)=> state.map.results.serviceDetail)
+  const serviceHours = useSelector((state: RootState)=> state.map.results.hours)
+  const allResult = useSelector((state:RootState)=> state.map.results)
   const loca = useSelector((state: RootState) => state.map.results.pickup);
   const locaB = useSelector((state: RootState) => state.map.results.dropoff);
-  
   const {
     ready,
     value,
@@ -51,7 +53,6 @@ export default function SearchLocation() {
   const handleInputB = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValueB(e.target.value || '');
   };
-
   const handleSelect = ({ description }: { description: string }) => () => {
     setValue(description, false);
     clearSuggestions();
@@ -120,12 +121,46 @@ export default function SearchLocation() {
         </li>
       );
     });
+    const [hours, setHoursLocal] = React.useState<number | string>(
+      serviceHours !== null ? serviceHours.toString() : ""
+    );
 
+    React.useEffect(() => {
+      console.log('results',allResult)
+      if (hours !== null && hours !== undefined && !isNaN(Number(hours))) {
+        dispatch(setServiceHours(Number(hours)));
+      }
+    }, [hours, dispatch]);
   return (
+    <>
+    {
+    serviceDetail === "hourly" ?
+    <div className="p-4 w-full">
+      <Input
+          type="number"
+          label="Hours"
+          placeholder="0"
+          radius="none"
+          value={hours.toString()}
+          onValueChange={(value: string) => setHoursLocal(value)}
+          labelPlacement="inside"
+          variant="bordered"
+          endContent={
+            <div className="pointer-events-none flex items-center">
+              <span className="text-default-400 text-small">Hour</span>
+            </div>
+          }
+        />
+      </div>
+      : <></>
+    }
     <div ref={ref} className="p-4 w-full  flex justify-between items-start gap-3 max-sm:flex-col">
-      <div className="w-1/2 max-sm:w-full relative">
+      {
+      serviceDetail === 'from' ? <></> :
+      <div className={`${serviceDetail === 'from' || serviceDetail === 'hourly' ? "w-1/2" : "w-full"} max-sm:w-full relative`}>
       <Input
       isRequired
+      color={loca === "" ? "danger" : "default"}
         type="text"
         variant="bordered"
           label="Pick-up address"
@@ -138,13 +173,17 @@ export default function SearchLocation() {
         placeholder="Enter pickup address"
       />
       {status === 'OK' && <ul className="bg-white absolute z-10">{renderSuggestions()}</ul>}
-      </div>
-<div className="w-1/2 max-sm:w-full">
+    </div>
+      }
+      {
+      serviceDetail === 'to'? <></> :
+<div className={`${serviceDetail === 'to' || serviceDetail === 'hourly' ? "w-1/2" : "w-full"} relative max-sm:w-full`}>
         <Input
+        color={locaB === "" ? "danger" : "default"}
         isRequired
-          radius='none'
-          type="text"
-      onClear={() => clearInputB()}
+        radius='none'
+        type="text"
+        onClear={() => clearInputB()}
         variant="bordered"
         label="Drop-off address"
         isClearable
@@ -155,6 +194,8 @@ export default function SearchLocation() {
       />
       {statusB === 'OK' && <ul className="bg-white absolute z-10">{renderSuggestionsB()}</ul>}
 </div>
+    }
     </div>
+    </>
   );
 };
