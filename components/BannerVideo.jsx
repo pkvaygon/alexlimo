@@ -9,14 +9,14 @@ export default function BannerVideo() {
         {/* <video className="w-full h-full object-cover brightness-50" controls={false} autoPlay loop muted preload="auto playsInline">
         <source src="https://res.cloudinary.com/dxvf93ovn/video/upload/v1706931839/chicagovideo_rjuqc6.mp4" type="video/mp4" />
         </video> */}
-        <CldVideoPlayer
+        {/* <CldVideoPlayer
         width="100%"
         height="100%"
           autoplay
         sound={0}
         loop={true}
         src="https://res.cloudinary.com/dxvf93ovn/video/upload/v1706931839/chicagovideo_rjuqc6.mp4"
-        />
+        /> */}
       </div>
        )
   }

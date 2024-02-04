@@ -13,7 +13,7 @@ export default function HomeBanner() {
     slides: number[]
     options?: EmblaOptionsType
   }
-  const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 3000})])
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 5000})])
     return (
         <section className="w-full h-full">
         <div className="embla">

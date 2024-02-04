@@ -17,8 +17,8 @@ export default function Home() {
     <>
     <section className="w-full h-screen flex flex-col justify-center items-center">
         <div className="relative z-0 w-full h-screen max-sm:overflow-visible overflow-hidden bg-black-800">
-          {/* <HomeBanner/> */}
-          <BannerVideo/>
+          <HomeBanner/>
+          {/* <BannerVideo/> */}
         <div className=" max-sm:w-[90%] sm:container sm:w-full max-sm:mx-auto gap-3 bg-black-800 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-4xl font-bold max-sm:text-2xl max-md:text-xl ">Experience isn&apos;t Expensive, it&apos;s Priceless</h1>
           <h2 className="text-lg max-sm:text-sm  max:md:text-md w-full">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
