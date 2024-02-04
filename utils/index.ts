@@ -31,7 +31,7 @@ export default imageByIndex;
 export const vehicles: any[] = [
 {
 image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/bus_car_lwnnke.png',
-name: 'Chevrolet Big Bus',
+name: 'CHEVR',
 passengers: 6,
 bags: 6,
 price: 162.14,
@@ -45,16 +45,21 @@ price: 162.14,
     },
     {
         image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/lincolnNavigator_io4nn6.png',
-        name: 'Lincoln Navigator 2024',
+        name: 'Cadillac Escalade ESV',
         passengers: 6,
         bags: 6,
         price: 180.14,
         },
         {
             image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929861/van_sprinter_lligkw.png',
-            name: 'Cargo van Sprinter 2024',
+            name: 'SPRINTER VAN',
             passengers: 10,
             bags: 8,
             price: 110.00,
             }
 ]
+// Make a reservations
+// Button Order Ride change make a reservation change color Nuteral color(email)
+// terms & conditions cope text
+// change we who we are description text
+// godaddy hosting website

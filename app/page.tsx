@@ -25,7 +25,7 @@ export default function Home() {
           <h2 className="text-lg max-sm:text-sm  max:md:text-md w-full">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
 integrity and reliability resonate throughout the organization. We look forward to you or your organization joining our family of
 satisfied clients.</h2>
-<Link href="order-ride" className="px-12 py-4 bg-blue-800 text-white">Order Ride</Link>
+<Link href="order-ride" className="px-12 py-4 bg-blue-800 text-white">Make a Reservation</Link>
         </div>
       </div>
       </section>
@@ -37,9 +37,7 @@ satisfied clients.</h2>
           <div className="container mx-auto h-full flex flex-col text-black gap-2 items-start justify-around">
             <h3 className=" font-inter max-sm:text-sm text-base">Who Are we</h3>
             <h1 className="font-space max-sm:text-2xl max-md:text-3xl max-lg:text-4xl lg:text-5xl leading-10 non-italic font-medium">We are Exceptional <br/> Private Drivers</h1>
-            <p className="font-inter max-sm:text-base lg:text-lg">Our clients receive remarkable results because we get to help
-them build their business without compromising our creativity!
-We love what we do in the world of finance.</p>
+            <p className="font-inter max-sm:text-base lg:text-lg">All our drivers are professionally licensed chauffers’ with years of experience delivering unapparelled service where compromise doesn’t exist. We love what we do!</p>
             <Link className="font-space p-2 bg-blue-800 text-white text-base leading-7 font-medium" href="/contacts">Contact Us</Link>
           </div>
         </div>
