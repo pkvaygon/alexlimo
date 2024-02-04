@@ -18,7 +18,7 @@ export default function SelectService() {
       lat: selectedAirport.lat,
       lng: selectedAirport.lng,
       address: selectedAirport.address,
-      airportName: selectedAirport.name
+      airportName: selectedAirport.name,
     }));
     
   }

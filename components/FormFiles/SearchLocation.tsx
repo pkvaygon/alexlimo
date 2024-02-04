@@ -122,7 +122,7 @@ export default function SearchLocation() {
       );
     });
     const [hours, setHoursLocal] = React.useState<number | string>(
-      serviceHours !== null ? serviceHours.toString() : ""
+      serviceHours !== null && serviceHours !== undefined ? serviceHours.toString() : ""
     );
 
     React.useEffect(() => {
