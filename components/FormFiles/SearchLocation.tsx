@@ -73,7 +73,7 @@ export default function SearchLocation() {
     getGeocode({ address: description }).then((results) => {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
-      dispatch(setLocationB({ lat, lng, address: formatted_address,airportName: cachedAirportName }));
+      dispatch(setLocationB({ lat, lng, address: formatted_address }));
       // console.log('dropoff',locaB)
     });
   };
