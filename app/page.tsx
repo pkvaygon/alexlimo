@@ -24,7 +24,7 @@ export default function Home() {
           <h2 className="text-lg max-sm:text-sm  max:md:text-md w-full">We are a family and locally owned business deeply rooted in tradition serving the Chicago and Milwaukee markets. Where
 integrity and reliability resonate throughout the organization. We look forward to you or your organization joining our family of
 satisfied clients.</h2>
-<Link href="order-ride" className="px-12 py-4 bg-[#afa581] text-lg rounded-sm text-white">Make a Reservation</Link>
+<Link href="#reservation" className="px-12 py-4 bg-[#afa581] text-lg rounded-sm text-white">Make a Reservation</Link>
         </div>
       </div>
       </section>
@@ -48,7 +48,7 @@ satisfied clients.</h2>
       <article className="container py-8">
         <Blog/>
       </article>
-      <section className="max-sm:h-auto h-[520px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
+      <section id="reservation" className="max-sm:h-auto h-[520px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
         <div className=" w-1/2 max-sm:w-full h-full flex flex-col items-start justify-start">
           <SelectService/>
           <DateComponent/>

@@ -17,6 +17,13 @@ export interface LocationClickedEvent {
   lng: number | null;
   address?: string | null;
 }
+export interface CacheProps{
+  from: LocationProps;
+  to: LocationProps;
+  pickup: string | null,
+  dropoff: string | null,
+  airportName?: string | null
+}
 export interface ResultsProps{
   airportName: string,
   serviceDetail: string,
@@ -26,12 +33,14 @@ export interface ResultsProps{
   travellers: number,
   kids: number,
   bags: number,
+  selectedVehicle?:VehicleProps | null
 }
 export interface GoogleMapStateProps {
   location: LocationProps;
   locationB: LocationProps;
   results: ResultsProps;
-  checkPricing: boolean
+  checkPricing: boolean;
+  cache: CacheProps;
 }
 export interface RootState {
   map: GoogleMapStateProps;

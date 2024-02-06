@@ -31,7 +31,7 @@ export default imageByIndex;
 export const vehicles: any[] = [
 {
 image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/bus_car_lwnnke.png',
-name: 'CHEVR',
+name: 'CHEVROLET',
 passengers: 6,
 bags: 6,
 price: 162.14,
@@ -58,11 +58,7 @@ price: 162.14,
             price: 110.00,
             }
 ]
-// Make a reservations
-// Button Order Ride change make a reservation change color Nuteral color(email)
-// terms & conditions cope text
-// change we who we are description text
-// godaddy hosting website
+// replace 
 
 export const airports: AiportProps[] = [
     {

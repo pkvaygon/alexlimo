@@ -2,7 +2,7 @@
 import React from "react";
 import {Select, SelectItem} from "@nextui-org/react";
 import { useDispatch, useSelector } from "react-redux";
-import { chooseServiceDetail, setLocation,setLocationB } from '@/store/googleMapSlice'
+import { chooseServiceDetail, setLocation,setLocationB,serviceSelectChanged,serviceSelectChangedB } from '@/store/googleMapSlice'
 import { airports } from "@/utils";
 
 export default function SelectService() {
@@ -10,17 +10,29 @@ export default function SelectService() {
   const airportName = useSelector((state)=> state.map.results.airportName)
   const dispatch = useDispatch();
   const [selectedKey, setSelectedKey] = React.useState(() => [serviceDetail]);
-  const [from, setFrom] = React.useState(airports[0].address)
+  const [from, setFrom] = React.useState(airports[0].key)
+  function changeServiceSelect(){
+    if(serviceDetail === 'from'){
+    dispatch(serviceSelectChanged())
+    console.log('from', serviceDetail)
+  }else if(serviceDetail === "to"){
+    dispatch(serviceSelectChangedB())
+    console.log('to', serviceDetail)
+  }else{
+    console.log('else', serviceDetail)
+    dispatch(serviceSelectChanged())
+    dispatch(serviceSelectChangedB())
+    }
+  }
   function changeFromAirport(e){
     setFrom(e.target.value)
-    const selectedAirport = airports.find((airport)=> airport.key === e.target.value)
+    const selectedAirport = airports.find((airport) => airport.key === e.target.value)
     dispatch(setLocation({
-      lat: selectedAirport.lat,
-      lng: selectedAirport.lng,
-      address: selectedAirport.address,
-      airportName: selectedAirport.name,
+      lat: selectedAirport?.lat,
+      lng: selectedAirport?.lng,
+      address: selectedAirport?.address,
+      airportName: selectedAirport?.name,
     }));
-    
   }
   React.useEffect(() => {
     if(serviceDetail === 'from'){
@@ -31,8 +43,6 @@ export default function SelectService() {
         airportName: airports[0].name
       }));
     }
-    // console.log("airportName", airportName)
-    // console.log("aiports.name",airports[0].name)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 React.useEffect(()=>{
@@ -41,13 +51,13 @@ const key = selectedKeyArray[0];
   if (key === undefined) {
   alert('Choose Service')
 } else {
-  console.log('redux', serviceDetail)
   dispatch(chooseServiceDetail(key));
 }
 },[selectedKey,dispatch, serviceDetail])
     return (
         <div className="px-[18px] max-lg:flex-col w-full max-sm:mt-5 flex gap-2 justify-between items-center">
         <Select
+        onChange={changeServiceSelect}
           selectedKeys={selectedKey}
           onSelectionChange={setSelectedKey}
           selectionMode="single"
@@ -70,7 +80,7 @@ const key = selectedKeyArray[0];
       radius="none"
               label={`Select ${serviceDetail} which airport`}
       placeholder="Select from which airport"
-          defaultSelectedKeys={["ohare"]}
+          defaultSelectedKeys={[from]}
           onChange={changeFromAirport}
     >
       {airports.map((airport) => (

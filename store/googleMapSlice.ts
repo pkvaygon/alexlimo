@@ -1,4 +1,4 @@
-import { GoogleMapStateProps, LocationProps, ResultsProps } from "@/types";
+import { GoogleMapStateProps, LocationProps, ResultsProps,VehicleProps } from "@/types";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: GoogleMapStateProps = {
@@ -12,6 +12,21 @@ const initialState: GoogleMapStateProps = {
         lng: null,
         address: null,
     },
+    cache: {
+        from: {
+            lat: null,
+            lng: null,
+            address: null,
+        },
+        to: {
+            lat: null,
+            lng: null,
+            address: null,
+        },
+        airportName: '',
+        pickup: '',
+        dropoff: '',
+    },
     results: {
         serviceDetail: 'from',
         airportName: '',
@@ -20,7 +35,8 @@ const initialState: GoogleMapStateProps = {
         dropoff: null,
         travellers: 0,
         kids: 0,
-        bags: 0
+        bags: 0,
+        selectedVehicle: null
     },
     checkPricing: true
 };
@@ -29,6 +45,9 @@ export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
+        chooseVehicle:(state,action:PayloadAction<VehicleProps>)=>{
+state.results.selectedVehicle = action.payload
+        },
         setServiceHours: (state, action: PayloadAction<number>) => {
             state.results.hours = action.payload;
         },
@@ -46,6 +65,8 @@ export const googleMapSlice = createSlice({
               pickup: address ?? null,
               airportName: airportName ?? '',
             };
+            state.cache.from = {lat, lng, address}
+            state.cache = {...state.cache,airportName: airportName ?? '' }
         },
         setLocationB: (state, action: PayloadAction<LocationProps & {airportName?: string}>) => {
             const { lat, lng, address, airportName} = action.payload;
@@ -55,25 +76,41 @@ export const googleMapSlice = createSlice({
                 dropoff: address ?? null,
                 airportName: airportName ?? '',
           };
+          state.cache.to = { lat, lng, address}
+          state.cache = {...state.cache,airportName: airportName ?? '' }
+        },
+        serviceSelectChanged: (state)=>{
+            state.results = {
+                ...state.results,
+                pickup: null,
+            }
+        },
+        serviceSelectChangedB: (state)=>{
+            state.results = {
+                ...state.results,
+                dropoff: null,
+            }
         },
         clearLocation: (state) => {
             state.location = {
                 lat: null,
                 lng: null,
                 address: null,
-            };
-            
+            }
+            // state.results = {
+            //     ...initialState.results,  // Используйте initialState.results для сброса значений в начальные
+            // };
         },
         clearLocationB: (state) => {
             state.locationB = {
                 lat: null,
                 lng: null,
                 address: null,
-            };
+            }
+            // state.results = {
+            //     ...initialState.results,  // Используйте initialState.results для сброса значений в начальные
+            // };
         },
-       
-
-
         incrementTravellers: (state) => {
             state.results = {
                 ...state.results,
@@ -122,6 +159,9 @@ export const { chooseServiceDetail,setLocation, setLocationB, clearLocation, cle
     decrementBags,
     changeCheckStatus,
     setServiceHours,
+    serviceSelectChanged,
+    serviceSelectChangedB,
+    chooseVehicle
 } = googleMapSlice.actions;
 
 export default googleMapSlice.reducer;

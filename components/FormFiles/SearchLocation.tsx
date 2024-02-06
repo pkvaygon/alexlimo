@@ -13,7 +13,7 @@ export default function SearchLocation() {
   const dispatch = useDispatch();
   const serviceDetail = useSelector((state: RootState)=> state.map.results.serviceDetail)
   const serviceHours = useSelector((state: RootState)=> state.map.results.hours)
-  const allResult = useSelector((state:RootState)=> state.map.results)
+  const cachedAirportName = useSelector((state:RootState)=> state.map.cache.airportName)
   const loca = useSelector((state: RootState) => state.map.results.pickup);
   const locaB = useSelector((state: RootState) => state.map.results.dropoff);
   const {
@@ -60,8 +60,9 @@ export default function SearchLocation() {
     getGeocode({ address: description }).then((results) => {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
-      dispatch(setLocation({ lat, lng, address: formatted_address }));
-      // console.log('pickup',loca)
+      dispatch(setLocation({ lat, lng, address: formatted_address,
+        airportName: cachedAirportName !== null && cachedAirportName !== undefined ? cachedAirportName : '',
+       }));
     });
   };
 
@@ -72,7 +73,7 @@ export default function SearchLocation() {
     getGeocode({ address: description }).then((results) => {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
-      dispatch(setLocationB({ lat, lng, address: formatted_address }));
+      dispatch(setLocationB({ lat, lng, address: formatted_address,airportName: cachedAirportName }));
       // console.log('dropoff',locaB)
     });
   };
