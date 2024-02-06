@@ -98,7 +98,7 @@ return(
               <ModalHeader className="flex flex-col gap-1">Choose Vehicle Type</ModalHeader>
               <ModalBody className="h-auto py-6 grid grid-rows-auto overflow-auto  sm:grid-rows-1 sm:grid-cols-4 gap-3">
                 
-                {vehicleSelected !== true ?
+                {vehicleSelected === false?
                 vehicles.map((el,index)=>(
                   <div className="col-span-1" key={index} onClick={()=> onVehicleSelected(el)} >
                     <Card    isFooterBlurred className=" hover:drop-shadow-xl w-full h-[300px]">
