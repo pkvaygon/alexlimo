@@ -3,7 +3,7 @@ import React from 'react';
 import { RootState,VehicleProps } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
-import {chooseVehicle, incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags, clearLocation, clearLocationB } from '@/store/googleMapSlice'
+import {chooseVehicle, incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags, clearLocation, clearLocationB,changeCheckStatus } from '@/store/googleMapSlice'
 import {Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
 import { CldImage } from 'next-cloudinary';
@@ -15,8 +15,7 @@ const bags = useSelector((state: RootState) => state.map.results.bags)
 const res = useSelector((state: RootState)=> state.map.results) 
 const reduxVehicle = useSelector((state: RootState)=> state.map.results.selectedVehicle)
 const findAddress = airports.find((airport)=> airport.name === res.airportName)
-const [vehicleSelected, setVehicleSelected] = React.useState(false)
-    const dispatch = useDispatch();
+const dispatch = useDispatch();
 function onVehicleSelected(vehicle : VehicleProps){
   dispatch(chooseVehicle(vehicle))
   setVehicleSelected(true)
@@ -26,47 +25,56 @@ function onCanceled(){
   dispatch(clearLocation())
   dispatch(clearLocationB())
 }
-    const handleTravellersIncrement = () => {
-        dispatch(incrementTravellers());
-    };
+const handleTravellersIncrement = () => {
+  dispatch(incrementTravellers());
+};
 
-    const handleTravellersDecrement = () => {
-        dispatch(decrementTravellers());
-    };
+const handleTravellersDecrement = () => {
+  dispatch(decrementTravellers());
+};
 
-    const handleKidsIncrement = () => {
-        dispatch(incrementKids());
-    };
+const handleKidsIncrement = () => {
+  dispatch(incrementKids());
+};
 
-    const handleKidsDecrement = () => {
-        dispatch(decrementKids());
-    };
+const handleKidsDecrement = () => {
+  dispatch(decrementKids());
+};
 
-    const handleBagsIncrement = () => {
-        dispatch(incrementBags());
-    };
+const handleBagsIncrement = () => {
+  dispatch(incrementBags());
+};
 
-    const handleBagsDecrement = () => {
-        dispatch(decrementBags());
-    };
-    type ScrollBehavior = "normal" | "inside" | "outside";
-    const [scrollBehavior, setScrollBehavior] = React.useState<ScrollBehavior>('normal');
+const handleBagsDecrement = () => {
+  dispatch(decrementBags());
+};
+type ScrollBehavior = "normal" | "inside" | "outside";
+const [scrollBehavior, setScrollBehavior] = React.useState<ScrollBehavior>('normal');
 
-  React.useEffect(() => {
-    const handleResize = () => {
-      const newScrollBehavior = window.innerWidth <= 540 ? 'inside' : 'normal';
-      setScrollBehavior(newScrollBehavior);
-    };
-
+React.useEffect(() => {
+  const handleResize = () => {
+    const newScrollBehavior = window.innerWidth <= 540 ? 'inside' : 'normal';
+    setScrollBehavior(newScrollBehavior);
+  };
+  
     handleResize();
-
+    
     window.addEventListener('resize', handleResize);
-
+    
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-return(
+  const [vehicleSelected, setVehicleSelected] = React.useState(false)
+  const CheckPricing = () => {
+    if (res.dropoff  === null){
+      console.log('NULL')
+   dispatch(changeCheckStatus(true))
+    }else{
+      onOpen()
+    }
+  }
+  return(
     <>
     <div className='flex flex-col gap-3 h-auto mb-10'>
     <section className='flex gap-3 flex-wrap h-auto '>
@@ -87,7 +95,7 @@ return(
     </ButtonGroup>
         </div>
     </section>
-        <Button onPress={onOpen} className="bg-black lg:w-full  text-white mr-auto px-8" radius="none">
+        <Button onPress={CheckPricing} className="bg-black lg:w-full  text-white mr-auto px-8" radius="none">
         Check Pricing
     </Button>   
 </div>

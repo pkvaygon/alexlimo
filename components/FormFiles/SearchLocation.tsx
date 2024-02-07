@@ -6,11 +6,12 @@ import usePlacesAutocomplete, {
   } from "use-places-autocomplete";
   import useOnclickOutside from "react-cool-onclickoutside";
 import { useDispatch, useSelector } from "react-redux";
-import { setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours} from "@/store/googleMapSlice";
+import { setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours,changeCheckStatus} from "@/store/googleMapSlice";
 import { RootState } from "@/types";
 import {Input} from "@nextui-org/react";
 export default function SearchLocation() {
   const dispatch = useDispatch();
+  const checkStatus = useSelector((state: RootState)=> state.map.checkPricing)
   const serviceDetail = useSelector((state: RootState)=> state.map.results.serviceDetail)
   const serviceHours = useSelector((state: RootState)=> state.map.results.hours)
   const cachedAirportName = useSelector((state:RootState)=> state.map.cache.airportName)
@@ -47,10 +48,12 @@ export default function SearchLocation() {
   });
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeCheckStatus(false))
     setValue(e.target.value || '');
   };
 
   const handleInputB = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeCheckStatus(false))
     setValueB(e.target.value || '');
   };
   const handleSelect = ({ description }: { description: string }) => () => {
@@ -160,6 +163,8 @@ export default function SearchLocation() {
       <div className={`${serviceDetail === 'from' || serviceDetail === 'hourly' ? "w-1/2" : "w-full"} max-sm:w-full relative`}>
       <Input
       isRequired
+      isInvalid={checkStatus}
+      errorMessage={checkStatus && "Please enter the address"}
       color={loca === "" ? "danger" : "default"}
         type="text"
         variant="bordered"
@@ -181,6 +186,8 @@ export default function SearchLocation() {
         <Input
         color={locaB === "" ? "danger" : "default"}
         isRequired
+        isInvalid={checkStatus}
+        errorMessage={checkStatus && "Please enter the address"}
         radius='none'
         type="text"
         onClear={() => clearInputB()}
