@@ -1,12 +1,16 @@
 @import url('https://fonts.cdnfonts.com/css/bartkey');
 @import url('https://fonts.cdnfonts.com/css/times-new-roman');
 @import url('https://fonts.cdnfonts.com/css/rochester');
+@import url('https://fonts.cdnfonts.com/css/baskerville');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 body{
 background: #27272A;
 color: #D4D4D8;
+}
+.whitesd{
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 .yellow-tc{
 color: rgb(255, 255, 90);

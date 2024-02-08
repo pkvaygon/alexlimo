@@ -16,7 +16,6 @@ export const navlinks: NavlinksProps[] = [
     {id: 2,label: 'Book Online', href: '/book-online/'},
     {id: 3,label: 'Services', href: '/services/'},
     {id: 4,label: 'Contact', href: '/contact/'},
-    {id: 5,label: 'Terms & Conditions', href: '/terms-conditions/'},
 ]
 
 

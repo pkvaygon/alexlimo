@@ -4,7 +4,11 @@ import FooterIcon from '@/components/FooterIcon'
 const navLinks = [
   {
     name: "Home",
-    href: "#",
+    href: "/",
+  },
+  {
+    name: "Book Online",
+    href: "/book-online",
   },
   {
     name: "Services",
@@ -14,6 +18,10 @@ const navLinks = [
     name: "Contact",
     href: "#",
   },
+{
+  name: "Terms & Conditions",
+  href: "/terms-conditions"
+}
 ];
 
 
@@ -23,7 +31,8 @@ export default function Footer() {
     <footer className="flex w-full flex-col bg-[#07020d]">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 gap-6 py-12 lg:px-8">
         <div className="flex items-center justify-center">
-        <h1 className='text-4xl  text-center font-camomile rounded-full text-white'>Elite Luxury Limousine</h1>
+        {/* <h1 className='text-4xl  text-center font-camomile rounded-full text-white'>Elite Luxury Limousine</h1> */}
+        <h1 className='text-6xl  text-center font-rochester rounded-full text-white'>Elite Luxury Limousine</h1>
         </div>
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
           {navLinks.map((item) => (

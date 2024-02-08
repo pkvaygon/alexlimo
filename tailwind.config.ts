@@ -12,7 +12,8 @@ const config: Config = {
       fontFamily: {
         bartkey: ["BARTKEY", "sans-serif"],
         timesroman: ["Times New Roman", "sans-serif"],
-        rochester: ['Rochester', "sans-serif"]
+        rochester: ['Rochester', "sans-serif"],
+        baskerville: ['Baskerville',"sans-serif"]
       },
     },
   },

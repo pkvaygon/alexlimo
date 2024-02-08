@@ -6,7 +6,7 @@ export default function TermsConditions() {
         <section className="container py-10 flex flex-col gap-3">
             <div className="w-full h-[100px]"></div>
             <div className="dark text-white">
-                <h2 className="text-center">Terms & Conditions</h2>
+                <h2 className="yellow-tc text-center">Terms & Conditions</h2>
             </div>
             <div className="my-4 flex flex-col gap-3">
                 <h3 className="yellow-tc">General</h3>
