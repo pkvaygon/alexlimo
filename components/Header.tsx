@@ -23,9 +23,9 @@ const closeMenu = () => {
                     className="md:hidden"
                     onClick={toggleMenu}
                 />
-        <NavbarBrand className=" max-sm:w-[10%] w-[800px]">
+        {/* <NavbarBrand className=" max-sm:w-[10%] w-[800px]">
             <h1 className='w-auto text-4xl font-timesroman max-lg:text-xl italic text-white'>Elite Luxury Limousine</h1>
-        </NavbarBrand>
+        </NavbarBrand> */}
         </NavbarContent>
         <NavbarMenu className=" dark h-auto py-3 backdrop-blur-sm bg-black/30">
                 {navlinks.map((el) => (

@@ -57,6 +57,15 @@ const key = selectedKeyArray[0];
     return (
         <div className="px-[18px] max-lg:flex-col w-full max-sm:mt-5 flex gap-2 justify-between items-center">
         <Select
+        classNames={{
+        label: "text-white"
+        }}
+        popoverProps={{
+          classNames: {
+            base: "before:bg-gray-500",
+            content: "p-0 text-black border-small border-divider bg-background",
+          },
+        }}
         onChange={changeServiceSelect}
           selectedKeys={selectedKey}
           onSelectionChange={setSelectedKey}
@@ -64,7 +73,7 @@ const key = selectedKeyArray[0];
         radius="none"
         label="Service Detail"
         placeholder="Select service"
-          className="w-full max-w-1/2"
+          className="w-full text-white max-w-1/2"
           variant="bordered"
         >
           <SelectItem isDisabled={serviceDetail === "from" ? true : false} key="from"  value="from">From Airport</SelectItem>
@@ -75,6 +84,15 @@ const key = selectedKeyArray[0];
       {
       serviceDetail === 'from' || serviceDetail === 'to' ?
       <Select
+      classNames={{
+        label: "text-white"
+        }}
+        popoverProps={{
+          classNames: {
+            base: "before:bg-gray-500",
+            content: "p-0 text-black border-small border-divider bg-background",
+          },
+        }}
        className="w-full max-w-1/2"
        variant="bordered"
       radius="none"

@@ -10,8 +10,15 @@ const DateComponent: React.FC = () => {
   return (
     <div className="p-4 gap-3 w-full flex justify-between items-start">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker label="Pick-up Date" className="w-full"  defaultValue={dayjs(new Date())} />
-            <TimePicker label="Pick-up Time" className="w-full" defaultValue={dayjs('2022-04-17T15:30')} />
+            <DatePicker
+             label={<span className="">Pick-up Date</span>} 
+              className="w-full bg-white  text-white" 
+               defaultValue={dayjs(new Date())}
+               slotProps={{ 
+                textField: { InputProps: { color: 'primary' },
+               }}}
+               />
+            <TimePicker label={<span className="">Pick-up Time</span>} className="w-full  text-white" defaultValue={dayjs('2022-04-17T15:30')} />
       </LocalizationProvider>
     </div>
   );

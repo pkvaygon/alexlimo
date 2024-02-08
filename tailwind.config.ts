@@ -11,7 +11,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         bartkey: ["BARTKEY", "sans-serif"],
-        timesroman: ["Times New Roman", "sans-serif"]
+        timesroman: ["Times New Roman", "sans-serif"],
+        rochester: ['Rochester', "sans-serif"]
       },
     },
   },
