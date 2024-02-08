@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "out/types/**/*.ts"
-, "components/CarsModal.jsx", "components/FormFiles/SelectService.jsx"  ],
+, "components/CarsModal.jsx", "components/FormFiles/SelectService.jsx", "app/book-online/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

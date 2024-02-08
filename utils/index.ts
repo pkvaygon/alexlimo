@@ -1,6 +1,4 @@
-import { NavlinksProps,VehicleProps,AiportProps } from "@/types";
-import { StaticImageData } from "next/image";
-
+import { NavlinksProps,AiportProps, ReviewProps } from "@/types";
 
 import busCar from '@/public/bus_car.png'
 import bmwCar from '@/public/bmw_car.png'
@@ -89,4 +87,25 @@ export const airports: AiportProps[] = [
         lat: 41.6011247,
         lng: -87.4237198,
     },
+]
+
+export const reviews: ReviewProps[] = [
+    {
+        rating: 5,
+        image: "https://res.cloudinary.com/dxvf93ovn/image/upload/v1707358025/alexlimoicons/vehicle-icon_z88nct.png",
+        label: "Variety of vehicles",
+        description: "Our vehicles are frequently inspected for safety and quality insuring we go above and beyond your expectations while delivering a tranquil and quality experience",
+    },
+    {
+        rating: 5,
+        image: "https://res.cloudinary.com/dxvf93ovn/image/upload/v1707358024/alexlimoicons/heart_pb2iol.png",
+        label: "Best Client Service",
+        description: "We can assist you with the details and planning starting with what vehicle to choose. Assisting with the proper time and desired route in order to provide you with a seamless experience"
+    },
+    {
+        rating: 5,
+        image: "https://res.cloudinary.com/dxvf93ovn/image/upload/v1707358186/alexlimoicons/star_ivsh5v.png",
+        label: "Fastest Route Guarantee",
+        description: "All of our vehicles are equipped with the latest stae of the art navigation systems with real time weather and traffic data. This enables our drivers to execute the fastest and best route avoiding delays."
+    }
 ]

@@ -1,16 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import private_driver from '@/public/private_driver.png'
-import Map from '@/components/GoogleMapFiles/GoogleMap'
-import DateComponent from '@/components/FormFiles/DatePicker';
-import SearchLocation from '@/components/FormFiles/SearchLocation';
-import HomeBanner from '@/components/HomeBanner';
-import PeopleForm from '@/components/FormFiles/PeopleForm';
-import Footer from '@/components/Footer'
+import Reviews from '@/components/Reviews'
 import Blog from './../components/Blog';
 import ad from '@/public/adpicture.jpg'
 import BannerVideo from '@/components/BannerVideo'
-import SelectService from '@/components/FormFiles/SelectService'
 export default function Home() {
 
   return (
@@ -49,20 +43,7 @@ tradition where integrity and reliability resonate throughout the organization.<
       <article className="container py-8">
         <Blog/>
       </article>
-      <section id="reservation" className="py-2 max-sm:h-auto bg-white h-[520px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-start mt-3">
-        <div className=" w-1/2 max-sm:w-full h-full flex flex-col items-start justify-start">
-          <SelectService/>
-          <DateComponent/>
-          <SearchLocation />
-          <div className="w-full px-4">
-            <PeopleForm/>
-          </div>
-        </div>
-          <div className="w-1/2 max-sm:w-full h-1/2 max-md:h-full md:h-[500px] max-sm:h-[300px]">
-        <Map/>
-        </div>
-      </section>
-      <Footer/>
+      <Reviews/>
     </>
   );
 }

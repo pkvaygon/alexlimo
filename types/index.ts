@@ -70,3 +70,9 @@ export interface AiportProps{
   lat: number,
   lng: number,
 }
+export interface ReviewProps{
+  rating: number,
+  image: string,
+  label: string,
+  description: string,
+}
