@@ -40,6 +40,7 @@ export interface GoogleMapStateProps {
   locationB: LocationProps;
   results: ResultsProps;
   checkPricing: boolean;
+  termsConditions: boolean;
   cache: CacheProps;
 }
 export interface RootState {

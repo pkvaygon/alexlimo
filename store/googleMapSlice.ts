@@ -38,7 +38,8 @@ const initialState: GoogleMapStateProps = {
         bags: 0,
         selectedVehicle: null
     },
-    checkPricing: false
+    checkPricing: false,
+    termsConditions: false,
 };
 
 export const googleMapSlice = createSlice({
