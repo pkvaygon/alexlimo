@@ -12,21 +12,6 @@ const initialState: GoogleMapStateProps = {
         lng: null,
         address: null,
     },
-    cache: {
-        from: {
-            lat: null,
-            lng: null,
-            address: null,
-        },
-        to: {
-            lat: null,
-            lng: null,
-            address: null,
-        },
-        airportName: '',
-        pickup: '',
-        dropoff: '',
-    },
     results: {
         serviceDetail: 'from',
         airportName: '',
@@ -34,9 +19,10 @@ const initialState: GoogleMapStateProps = {
           pickup: null,
         dropoff: null,
         travellers: 0,
-        kids: 0,
         bags: 0,
-        selectedVehicle: null
+        selectedVehicle: null,
+        airline: "",
+        flight: ""
     },
     checkPricing: false,
     termsConditions: false,
@@ -46,8 +32,14 @@ export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
+        resultAirline: (state,action:PayloadAction<string>)=>{
+        state.results.airline = action.payload
+        },
+        resultFlight: (state, action:PayloadAction<string>)=>{
+        state.results.flight = action.payload
+        },
         chooseVehicle:(state,action:PayloadAction<VehicleProps>)=>{
-state.results.selectedVehicle = action.payload
+        state.results.selectedVehicle = action.payload
         },
         setServiceHours: (state, action: PayloadAction<number>) => {
             state.results.hours = action.payload;
@@ -58,27 +50,22 @@ state.results.selectedVehicle = action.payload
         chooseServiceDetail: (state, action: PayloadAction<string>) => {
             state.results.serviceDetail = action.payload;
         },
-        setLocation: (state, action: PayloadAction<LocationProps & { airportName?: string }>) => {
-            const { lat, lng, address, airportName } = action.payload;
-            state.location = { lat, lng, address };
-            state.results = {
-              ...state.results,
-              pickup: address ?? null,
-              airportName: airportName ?? '',
-            };
-            state.cache.from = {lat, lng, address}
-            state.cache = {...state.cache,airportName: airportName ?? '' }
+        resultAirportName: (state,action: PayloadAction<string>)=>{
+        state.results.airportName = action.payload
         },
+        setLocation: (state, action: PayloadAction<LocationProps>) => {
+            const { lat, lng, address } = action.payload;
+            state.location = { lat, lng, address };
+          },
         setLocationB: (state, action: PayloadAction<LocationProps & {airportName?: string}>) => {
-            const { lat, lng, address, airportName} = action.payload;
+            const { lat, lng, address, } = action.payload;
             state.locationB = { lat, lng, address };
-            state.results = {
-              ...state.results,
-                dropoff: address ?? null,
-                airportName: airportName ?? '',
-          };
-          state.cache.to = { lat, lng, address}
-          state.cache = {...state.cache,airportName: airportName ?? '' }
+        },
+        resultDropoff: (state, action: PayloadAction<string>) => {
+        state.results.dropoff = action.payload
+        },
+        resultPickup: (state, action: PayloadAction<string>) => {
+            state.results.pickup = action.payload
         },
         serviceSelectChanged: (state)=>{
             state.results = {
@@ -98,9 +85,6 @@ state.results.selectedVehicle = action.payload
                 lng: null,
                 address: null,
             }
-            // state.results = {
-            //     ...initialState.results,  // Используйте initialState.results для сброса значений в начальные
-            // };
         },
         clearLocationB: (state) => {
             state.locationB = {
@@ -108,9 +92,6 @@ state.results.selectedVehicle = action.payload
                 lng: null,
                 address: null,
             }
-            // state.results = {
-            //     ...initialState.results,  // Используйте initialState.results для сброса значений в начальные
-            // };
         },
         incrementTravellers: (state) => {
             state.results = {
@@ -122,18 +103,6 @@ state.results.selectedVehicle = action.payload
             state.results = {
                 ...state.results,
                 travellers: Math.max(state.results.travellers - 1, 0),
-            };
-        },
-        incrementKids: (state) => {
-            state.results = {
-                ...state.results,
-                kids: state.results.kids + 1,
-            };
-        },
-        decrementKids: (state) => {
-            state.results = {
-                ...state.results,
-                kids: Math.max(state.results.kids - 1, 0),
             };
         },
         incrementBags: (state) => {
@@ -154,15 +123,18 @@ state.results.selectedVehicle = action.payload
 
 export const { chooseServiceDetail,setLocation, setLocationB, clearLocation, clearLocationB,  incrementTravellers,
     decrementTravellers,
-    incrementKids,
-    decrementKids,
     incrementBags,
     decrementBags,
     changeCheckStatus,
     setServiceHours,
     serviceSelectChanged,
     serviceSelectChangedB,
-    chooseVehicle
+    chooseVehicle,
+    resultAirline,
+    resultFlight,
+    resultAirportName,
+    resultDropoff,
+    resultPickup
 } = googleMapSlice.actions;
 
 export default googleMapSlice.reducer;

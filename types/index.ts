@@ -17,23 +17,17 @@ export interface LocationClickedEvent {
   lng: number | null;
   address?: string | null;
 }
-export interface CacheProps{
-  from: LocationProps;
-  to: LocationProps;
-  pickup: string | null,
-  dropoff: string | null,
-  airportName?: string | null
-}
 export interface ResultsProps{
   airportName: string,
   serviceDetail: string,
   hours?: number;
   pickup: string | null,
-  dropoff: string | null,
+  dropoff: string | null | undefined,
   travellers: number,
-  kids: number,
   bags: number,
-  selectedVehicle?:VehicleProps | null
+  selectedVehicle?:VehicleProps | null,
+  airline: string,
+  flight: string
 }
 export interface GoogleMapStateProps {
   location: LocationProps;
@@ -41,7 +35,6 @@ export interface GoogleMapStateProps {
   results: ResultsProps;
   checkPricing: boolean;
   termsConditions: boolean;
-  cache: CacheProps;
 }
 export interface RootState {
   map: GoogleMapStateProps;

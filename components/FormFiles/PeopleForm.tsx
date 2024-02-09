@@ -3,7 +3,7 @@ import React from 'react';
 import { RootState,VehicleProps } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
-import {chooseVehicle, incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags, clearLocation, clearLocationB,changeCheckStatus } from '@/store/googleMapSlice'
+import {chooseVehicle, incrementTravellers, decrementTravellers, incrementBags, decrementBags, clearLocation, clearLocationB,changeCheckStatus } from '@/store/googleMapSlice'
 import {Link,Checkbox,Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
 import { CldImage } from 'next-cloudinary';
@@ -25,21 +25,14 @@ function onCanceled(){
   setVehicleSelected(false)
   dispatch(clearLocation())
   dispatch(clearLocationB())
-}
+  }
+
 const handleTravellersIncrement = () => {
   dispatch(incrementTravellers());
 };
 
 const handleTravellersDecrement = () => {
   dispatch(decrementTravellers());
-};
-
-const handleKidsIncrement = () => {
-  dispatch(incrementKids());
-};
-
-const handleKidsDecrement = () => {
-  dispatch(decrementKids());
 };
 
 const handleBagsIncrement = () => {
@@ -75,6 +68,9 @@ React.useEffect(() => {
       onOpen()
     }
   }
+  React.useEffect(() => {
+    
+  },[])
   return(
     <>
     <div className='flex flex-col gap-3 h-auto mb-10'>
@@ -148,6 +144,8 @@ React.useEffect(() => {
                         {(res?.serviceDetail === 'point' || res?.serviceDetail === 'hourly') && <p>Pick-up From {res?.pickup}</p>}
                         {(res?.serviceDetail === 'point' || res?.serviceDetail === 'hourly') && <p>Drop-off To {res?.dropoff}</p>}
                         {res?.serviceDetail === 'hourly' && <p>Hours: {res.hours}</p>}
+                        {res?.serviceDetail === 'from' || res?.serviceDetail === 'to'?  <p>Airline: {res.airline}</p> : null}
+                        {res?.serviceDetail === 'from' || res?.serviceDetail === 'to'?  <p>Flight: {res.flight}</p> : null}
                         <p>Passengers: {res.travellers}</p>
                         <p>Luggage: {res.bags}</p>
                       </div>
@@ -167,11 +165,11 @@ React.useEffect(() => {
         <Input label="Phone Number" labelPlacement="outside" placeholder="Enter phone number" />
         <Input label="Promode code (optional)" labelPlacement="outside" placeholder="Enter promocode" />
       </div>
-    </div> 
-                  <div>
-                    <p className="text-base">By checking this box you agree to our <Link showAnchorIcon isExternal underline="always" href="/terms-conditions">Terms & Conditions</Link></p>
-                    <Checkbox isRequired isSelected={isSelected} onValueChange={setIsSelected}></Checkbox>
+                  <div className="mt-2">
+                    <p className="text-xs">By checking this box you agree to our <Link showAnchorIcon isExternal underline="always" href="/terms-conditions">Terms & Conditions</Link></p>
+                          <Checkbox isRequired isSelected={isSelected} onValueChange={setIsSelected}></Checkbox>
                   </div>
+    </div> 
                   </div>
     </section>
     )}

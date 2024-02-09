@@ -6,15 +6,15 @@ import usePlacesAutocomplete, {
   } from "use-places-autocomplete";
   import useOnclickOutside from "react-cool-onclickoutside";
 import { useDispatch, useSelector } from "react-redux";
-import { setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours,changeCheckStatus} from "@/store/googleMapSlice";
+import {resultDropoff,resultPickup, setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours,changeCheckStatus} from "@/store/googleMapSlice";
 import { RootState } from "@/types";
 import {Input} from "@nextui-org/react";
 export default function SearchLocation() {
   const dispatch = useDispatch();
   const checkStatus = useSelector((state: RootState)=> state.map.checkPricing)
+  const airportName = useSelector((state: RootState)=> state.map.results.airportName)
   const serviceDetail = useSelector((state: RootState)=> state.map.results.serviceDetail)
   const serviceHours = useSelector((state: RootState)=> state.map.results.hours)
-  const cachedAirportName = useSelector((state:RootState)=> state.map.cache.airportName)
   const loca = useSelector((state: RootState) => state.map.results.pickup);
   const locaB = useSelector((state: RootState) => state.map.results.dropoff);
   const {
@@ -59,13 +59,11 @@ export default function SearchLocation() {
   const handleSelect = ({ description }: { description: string }) => () => {
     setValue(description, false);
     clearSuggestions();
-
     getGeocode({ address: description }).then((results) => {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
-      dispatch(setLocation({ lat, lng, address: formatted_address,
-        airportName: cachedAirportName !== null && cachedAirportName !== undefined ? cachedAirportName : '',
-       }));
+      dispatch(setLocation({ lat, lng, address: formatted_address}));
+      dispatch(resultPickup(formatted_address))
     });
   };
 
@@ -77,7 +75,7 @@ export default function SearchLocation() {
       const { lat, lng } = getLatLng(results[0]);
       const formatted_address = results[0]?.formatted_address || '';
       dispatch(setLocationB({ lat, lng, address: formatted_address }));
-      // console.log('dropoff',locaB)
+      dispatch(resultDropoff(formatted_address))
     });
   };
 

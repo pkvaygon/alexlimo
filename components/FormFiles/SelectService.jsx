@@ -1,16 +1,19 @@
 "use client";
 import React from "react";
-import {Select, SelectItem} from "@nextui-org/react";
+import {Select, SelectItem, Input} from "@nextui-org/react";
 import { useDispatch, useSelector } from "react-redux";
-import { chooseServiceDetail, setLocation,setLocationB,serviceSelectChanged,serviceSelectChangedB } from '@/store/googleMapSlice'
+import {resultAirportName, resultAirline,resultFlight,chooseServiceDetail, setLocation,setLocationB,serviceSelectChanged,serviceSelectChangedB } from '@/store/googleMapSlice'
 import { airports } from "@/utils";
 
 export default function SelectService() {
-  const serviceDetail = useSelector((state)=> state.map.results.serviceDetail)
   const airportName = useSelector((state)=> state.map.results.airportName)
   const dispatch = useDispatch();
+  const serviceDetail = useSelector((state)=> state.map.results.serviceDetail)
   const [selectedKey, setSelectedKey] = React.useState(() => [serviceDetail]);
   const [from, setFrom] = React.useState(airports[0].key)
+  const results = useSelector((state)=> state.map.results)
+  const [airline, setAirline] = React.useState("")
+  const [flight, setFlight] = React.useState("")
   function changeServiceSelect(){
     if(serviceDetail === 'from'){
     dispatch(serviceSelectChanged())
@@ -31,8 +34,16 @@ export default function SelectService() {
       lat: selectedAirport?.lat,
       lng: selectedAirport?.lng,
       address: selectedAirport?.address,
-      airportName: selectedAirport?.name,
     }));
+    dispatch(resultAirportName(selectedAirport?.name))
+  }
+  function onAirlineEntered(e){
+    setAirline(e.target.value)
+dispatch(resultAirline(e.target.value))
+  }
+  function onFlightEntered(e){
+    setFlight(e.target.value)
+    dispatch(resultFlight(e.target.value))
   }
   React.useEffect(() => {
     if(serviceDetail === 'from'){
@@ -40,8 +51,8 @@ export default function SelectService() {
         lat: airports[0].lat,
         lng: airports[0].lng,
         address: airports[0].address,
-        airportName: airports[0].name
       }));
+      dispatch(resultAirportName(airports[0].name))
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -54,7 +65,8 @@ const key = selectedKeyArray[0];
   dispatch(chooseServiceDetail(key));
 }
 },[selectedKey,dispatch, serviceDetail])
-    return (
+  return (
+      <>
         <div className="px-[18px] max-lg:flex-col w-full max-sm:mt-5 flex gap-2 justify-between items-center">
         <Select
         classNames={{
@@ -109,6 +121,35 @@ const key = selectedKeyArray[0];
     </Select>
     : <></>
       }
+      </div>
+     {
+      serviceDetail === "from" || serviceDetail === "to" ? 
+        <div className="p-4 w-full gap-2 flex max-md:flex-coll">
+          <Input
+            type="text"
+            label="Airline"
+            placeholder="airline"
+            radius="none"
+            value={airline}
+            onChange={(e)=>onAirlineEntered(e)}
+            labelPlacement="inside"
+            variant="bordered"
+          />
+          <Input
+            type="text"
+            label="Flight"
+            placeholder="# flight"
+            radius="none"
+            value={flight}
+            onChange={(e)=>onFlightEntered(e)}
+            labelPlacement="inside"
+            variant="bordered"
+          />
         </div>
+       : 
+        <></>
+      
+    }
+      </>
         )
 }

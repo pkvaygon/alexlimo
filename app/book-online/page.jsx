@@ -8,7 +8,7 @@ import  Map  from '@/components/GoogleMapFiles/GoogleMap';
 
 export default function BookOnline() {
     return (
-        <section className=" max-sm:h-auto bg-white h-[700px] flex-wrap container flex max-sm:flex-col-reverse justify-between items-center mt-3">
+        <section className=" max-sm:h-auto bg-white h-[800px] py-10 flex-wrap container flex max-sm:flex-col-reverse justify-between items-center mt-3">
         <div className=" w-1/2 max-sm:w-full h-full flex flex-col items-center justify-center">
           <SelectService/>
           <DateComponent/>
@@ -17,7 +17,7 @@ export default function BookOnline() {
             <PeopleForm/>
           </div>
         </div>
-          <div className="w-1/2 max-sm:w-full h-1/2 max-md:h-full md:h-[500px] max-sm:h-[300px]">
+          <div className="w-1/2 max-sm:w-full flex justify-start items-start h-1/2 max-md:h-full md:h-[540px] max-sm:h-[300px]">
         <Map/>
         </div>
       </section>
