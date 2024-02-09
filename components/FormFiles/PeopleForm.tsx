@@ -4,12 +4,13 @@ import { RootState,VehicleProps } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
 import {chooseVehicle, incrementTravellers, decrementTravellers, incrementKids, decrementKids, incrementBags, decrementBags, clearLocation, clearLocationB,changeCheckStatus } from '@/store/googleMapSlice'
-import {Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Link,Checkbox,Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
 import { CldImage } from 'next-cloudinary';
 import {airports} from '@/utils'
 export default function PeopleForm(){
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
+    const [isSelected, setIsSelected] = React.useState(false);
 const travellers = useSelector((state: RootState)=> state.map.results.travellers)
 const bags = useSelector((state: RootState) => state.map.results.bags)
 const res = useSelector((state: RootState)=> state.map.results) 
@@ -99,7 +100,7 @@ React.useEffect(() => {
         Check Pricing
     </Button>   
 </div>
- <Modal  scrollBehavior={scrollBehavior} size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
+ <Modal className="dark"  scrollBehavior={scrollBehavior} size="full" isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
             <>
@@ -164,8 +165,13 @@ React.useEffect(() => {
         <Input label="First Name" labelPlacement="outside" placeholder="Enter first name" />
         <Input label="Last Name" labelPlacement="outside" placeholder="Enter last name" />
         <Input label="Phone Number" labelPlacement="outside" placeholder="Enter phone number" />
+        <Input label="Promode code (optional)" labelPlacement="outside" placeholder="Enter promocode" />
       </div>
     </div> 
+                  <div>
+                    <p className="text-base">By checking this box you agree to our <Link showAnchorIcon isExternal underline="always" href="/terms-conditions">Terms & Conditions</Link></p>
+                    <Checkbox isRequired isSelected={isSelected} onValueChange={setIsSelected}></Checkbox>
+                  </div>
                   </div>
     </section>
     )}
