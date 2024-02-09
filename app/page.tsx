@@ -15,9 +15,9 @@ export default function Home() {
           {/* <HomeBanner/> */}
           <BannerVideo/>
         <div className=" max-sm:w-[90%] sm:container sm:w-full max-sm:mx-auto gap-3 bg-black-800 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-          <h1 className="text-8xl font-bold font-rochester whitesd max-sm:text-2xl max-md:text-xl outline-1 outline-black outline-solid text-black ">Elite Luxury Limousine</h1>
-          <h2 className="text-lg max-sm:text-sm  max:md:text-md whitesd  w-full font-bold italic text-black">Experience isn&apos;t Expensive, it&apos;s Priceless</h2>
-<Link href="/book-online" className="px-12 py-4 bg-[#afa581] font-semibold text-lg rounded-sm text-black">Make a Reservation</Link>
+          <h1 className="text-5xl font-bold font-baskerville whitesd max-sm:text-2xl max-md:text-xl outline-1 outline-black outline-solid text-white ">Elite Luxury Limousine</h1>
+          <h2 className="text-xl max-sm:text-sm  max:md:text-md whitesd   w-full font-bold italic text-white">Experience isn&apos;t Expensive, it&apos;s Priceless</h2>
+<Link href="/book-online" className="px-12 py-4 bg-[#afa581] font-semibold text-lg rounded-sm text-white">Make a Reservation</Link>
         </div>
       </div>
       </section>
@@ -27,12 +27,12 @@ export default function Home() {
         </div>
         <div className=" w-1/2 h-full flex justify-center items-center max-sm:h-1/2 max-sm:w-full">
           <div className="container mx-auto h-full flex flex-col  max-sm:gap-1 gap-2 items-start justify-around">
-            <h3 className=" font-bold font-inter max-sm:text-sm text-base">Who Are we</h3>
+            <h3 className="font-space max-sm:text-xl max-md:text-3xl max-lg:text-4xl lg:text-5xl leading-10 non-italic font-medium">Who Are we</h3>
             <p className="max-sm:text-[14px]">We set the benchmark when it comes to client service coupled with the best fleet in
 the industry. We are family owned and locally operated and deeply rooted in
 tradition where integrity and reliability resonate throughout the organization.</p>
             <h1 className="font-space max-sm:text-xl max-md:text-3xl max-lg:text-4xl lg:text-5xl leading-10 non-italic font-medium">We are Exceptional <br/> Private Drivers</h1>
-            <p className="font-inter max-sm:text-[14px] lg:text-lg">All our drivers are professionally licensed chauffers’ with years of experience delivering unapparelled service where compromise doesn’t exist. We love what we do!</p>
+            <p className="font-inter max-sm:text-[14px] lg:text-lg">All our drivers are professionally licensed chauffers with years of experience delivering unapparelled service where compromise doesn’t exist. We love what we do!</p>
             <Link className="fpx-12 py-2 px-3 bg-[#afa581] text-lg rounded-sm text-white" href="/contacts">Contact Us</Link>
           </div>
         </div>

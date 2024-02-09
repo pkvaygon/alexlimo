@@ -25,7 +25,7 @@ const closeMenu = () => {
                     onClick={toggleMenu}
                 />
         <NavbarBrand className=" max-sm:w-[10%] w-[800px]">
-            <h1 className='w-auto text-4xl font-rochester max-lg:text-xl italic text-yellow'>Elite Luxury Limousine</h1>
+            <h1 className='w-auto text-4xl font-baskerville max-lg:text-xl italic text-yellow'>Elite Luxury Limousine</h1>
         </NavbarBrand>
         </NavbarContent>
         <NavbarMenu className=" dark h-auto py-3 backdrop-blur-sm bg-black/30">
