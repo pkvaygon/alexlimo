@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { FormEvent, useRef } from 'react';
 import { RootState,VehicleProps } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,9 +8,11 @@ import {Link,Checkbox,Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalCont
 import { vehicles } from '@/utils';
 import { CldImage } from 'next-cloudinary';
 import {airports} from '@/utils'
+import { sendEmailJs } from '@/actions/emailjs';
 export default function PeopleForm(){
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [isSelected, setIsSelected] = React.useState(false);
+    const [emailSent,setEmailSent] = React.useState(false)
 const travellers = useSelector((state: RootState)=> state.map.results.travellers)
 const bags = useSelector((state: RootState) => state.map.results.bags)
 const res = useSelector((state: RootState)=> state.map.results) 
@@ -68,9 +70,29 @@ React.useEffect(() => {
       onOpen()
     }
   }
-  React.useEffect(() => {
-    
-  },[])
+
+  const sendResult = useSelector((state: RootState)=> state.map.results)
+  const airportAddress = useSelector((state: RootState)=> state.map.location.address)
+  const airportAddressB = useSelector((state: RootState)=> state.map.locationB.address)
+  async function onSubmit(data: FormData) {
+    console.log(airportAddress)
+    const combinedData = {
+      ...Object.fromEntries(data),
+      serviceDetail: sendResult.serviceDetail ,
+      airportName: sendResult.airportName || '' ,
+      airportAddress: airportAddress ,
+      airportAddressB:airportAddressB ,
+      hours: sendResult.hours,
+      pickup: sendResult.pickup ,
+      dropoff: sendResult.dropoff  ,
+      travellers: sendResult.travellers || '' ,
+      bags: sendResult.bags || '' ,
+      selectedVehicle: sendResult?.selectedVehicle?.name || '' ,
+      airline: sendResult.airline || '' ,
+      flight: sendResult.flight || '' ,
+    };
+      await sendEmailJs(combinedData)
+  }
   return(
     <>
     <div className='flex flex-col gap-3 h-auto mb-10'>
@@ -110,7 +132,7 @@ React.useEffect(() => {
                     <CldImage
                         width="600"
                       height="600"
-                      alt={el?.label}
+                      alt="alexlimo"
                       src={el.image}
                       className="object-cover"
                     />
@@ -134,7 +156,7 @@ React.useEffect(() => {
                     </div>
                     <div className="w-full">
                       <div className="w-full h-full">  
-                        <Image className="w-2/5 h-full" src={reduxVehicle?.image} alt={reduxVehicle?.name}/>
+                        <Image className="w-2/5 h-full" src={reduxVehicle?.image} alt="alex limo"/>
                       <div>
                         {res?.serviceDetail === 'from' && <p>Pick-up From {res?.airportName}</p>}
                         {res?.serviceDetail === 'to' && <p>Drop-off to {res?.airportName}</p>}
@@ -157,18 +179,21 @@ React.useEffect(() => {
       <div className="flex flex-col items-start ">
         <p className="text-large">Personal Info</p>
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <Input label="Username" labelPlacement="outside" placeholder="Enter username" />
-        <Input label="Email" labelPlacement="outside" placeholder="Enter email" />
-        <Input label="First Name" labelPlacement="outside" placeholder="Enter first name" />
-        <Input label="Last Name" labelPlacement="outside" placeholder="Enter last name" />
-        <Input label="Phone Number" labelPlacement="outside" placeholder="Enter phone number" />
-        <Input label="Promode code (optional)" labelPlacement="outside" placeholder="Enter promocode" />
-      </div>
+                          <form action={onSubmit}>
+                            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <Input name="username" label="Username" labelPlacement="outside" placeholder="Enter username" />
+        <Input name="email" label="Email" labelPlacement="outside" placeholder="Enter email" />
+        <Input name="first_name" label="First Name" labelPlacement="outside" placeholder="Enter first name" />
+        <Input name="last_name" label="Last Name" labelPlacement="outside" placeholder="Enter last name" />
+        <Input name="phone" label="Phone Number" labelPlacement="outside" placeholder="Enter phone number" />
+        <Input name="promocode" label="Promode code (optional)" labelPlacement="outside" placeholder="Enter promocode" />
+                            </div>
                   <div className="mt-2">
                     <p className="text-xs">By checking this box you agree to our <Link showAnchorIcon isExternal underline="always" href="/terms-conditions">Terms & Conditions</Link></p>
                           <Checkbox isRequired isSelected={isSelected} onValueChange={setIsSelected}></Checkbox>
-                  </div>
+                            </div>
+                            <button className="bg-white rounded-sm text-black px-3 py-2" type="submit">Submit</button>
+      </form>
     </div> 
                   </div>
     </section>

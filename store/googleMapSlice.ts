@@ -57,7 +57,7 @@ export const googleMapSlice = createSlice({
             const { lat, lng, address } = action.payload;
             state.location = { lat, lng, address };
           },
-        setLocationB: (state, action: PayloadAction<LocationProps & {airportName?: string}>) => {
+        setLocationB: (state, action: PayloadAction<LocationProps & {lat?: number, lng?: number, address?: string}>) => {
             const { lat, lng, address, } = action.payload;
             state.locationB = { lat, lng, address };
         },

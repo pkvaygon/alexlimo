@@ -5,7 +5,6 @@ export default function BannerVideo() {
     return(
       <div className="w-full h-screen">
         <video className="w-full h-full object-cover brightness-50" controls={false} autoPlay  muted preload="auto playsInline">
-          {/* <source src="https://firebasestorage.googleapis.com/v0/b/nextstore-a7837.appspot.com/o/localvideo.mp4?alt=media&token=030c4011-2d39-49ac-92b7-a273ba89ca54" type="video/mp4" /> */}
           <source src="/localvideo.mp4" type="video/mp4" />
         </video>
         {/* <CldVideoPlayer

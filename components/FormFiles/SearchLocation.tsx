@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {resultDropoff,resultPickup, setLocation,setLocationB,clearLocation,clearLocationB, setServiceHours,changeCheckStatus} from "@/store/googleMapSlice";
 import { RootState } from "@/types";
 import {Input} from "@nextui-org/react";
+import { airports } from '@/utils';
 export default function SearchLocation() {
   const dispatch = useDispatch();
   const checkStatus = useSelector((state: RootState)=> state.map.checkPricing)
@@ -64,6 +65,13 @@ export default function SearchLocation() {
       const formatted_address = results[0]?.formatted_address || '';
       dispatch(setLocation({ lat, lng, address: formatted_address}));
       dispatch(resultPickup(formatted_address))
+      if (serviceDetail === "to") {
+        const pointB = airports.find(airport => airport.name === airportName)
+        if (pointB) {
+          console.log('POINTB', pointB)
+          dispatch(setLocationB({lat: pointB.lat, lng: pointB.lng, address: pointB.address}))
+        }
+      }
     });
   };
 
