@@ -12,7 +12,7 @@ export default function Reviews(){
             <h4 className="text-center text-2xl max-sm:text-4xl">It&apos;s a Simple Choice</h4>
             <p className="text-center text-lg sm:text-base">We Set The Industry Benchmark</p>
         </div>
-        <div className=" container items-center h-auto py-9 grid max-sm:grid-cols-1 grid-cols-3 grid-flow-row gap-3">
+        <div className=" container items-baseline h-auto py-9 grid max-sm:grid-cols-1 grid-cols-3 grid-flow-row gap-3">
             {
                 reviews.map((el, index) => (    
             <div className="gap-3 flex flex-col justify-center items-center w-full h-[300px]" key={index}>
@@ -20,7 +20,7 @@ export default function Reviews(){
                         <Image className="object-cover" fill src={el.image} alt={el.description} />
                 </div>
                         <h3 className="text-medium">{el.label }</h3>
-                        <p className="w-full text-center text-[14px]">{el.description}</p>
+                        <p className="w-[300px] h-auto text-start text-[14px]">{el.description}</p>
             </div>
                     ))
             }
