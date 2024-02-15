@@ -21,24 +21,19 @@ export default function FooterIcons(){
           icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:twitter" />,
         },
         {
-          name: "GitHub",
-          href: "#",
-          icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:github" />,
-        },
-        {
           name: "YouTube",
           href: "#",
           icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:youtube" />,
         },
       ];
       return(
-        <>
+        <div className="flex gap-3 justify-start p-0">
         {socialItems.map((item) => (
             <Link key={item.name} className="text-default-400" href={item.href}>
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="w-5" />
             </Link>
           ))}
-          </>
+          </div>
         )
 }

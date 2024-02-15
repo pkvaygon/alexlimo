@@ -31,10 +31,9 @@ const closeMenu = () => {
             <div className=" p-0 max-sm:w-full w-full h-full relative">
             <Image className="object-contain w-full h-full" objectPosition="center"  priority src={logo} alt="logo"/>
             </div>
-            {/* <h1  className='w-auto text-4xl font-baskerville max-lg:text-xl italic text-yellow'>Elite Luxury Limousine</h1> */}
         </NavbarBrand>
         </NavbarContent>
-        <NavbarMenu className=" dark h-auto py-3 backdrop-blur-sm bg-black/30">
+        <NavbarMenu className="dark h-auto text-white py-3 backdrop-blur-sm bg-black/30">
                 {navlinks.map((el) => (
                     <NavbarMenuItem key={el.id}>
                         <Link
@@ -55,7 +54,7 @@ const closeMenu = () => {
         <NavbarContent className="max-md:hidden" justify="start">
           {navlinks.map(el => (
           <NavbarItem key={el.id} className="text-white">
-            <Link underline="active" className={pathname === el.href ? "text-[#F7B750]" : "text-[#F5A524]"}  href={el.href}>
+            <Link underline="active" className={pathname === el.href ? "text-[#F7B750]" : "text-white"}  href={el.href}>
               {el.label}
             </Link>
           </NavbarItem>

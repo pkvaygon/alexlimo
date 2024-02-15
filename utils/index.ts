@@ -11,10 +11,11 @@ import image2 from '@/public/image_2.png'
 import image3 from '@/public/image_3.png'
 
 
+
 export const navlinks: NavlinksProps[] = [
     {id: 1,label: 'Home', href: '/'},
     {id: 2,label: 'Book Online', href: '/book-online/'},
-    {id: 3,label: 'Services', href: '/services/'},
+    {id: 3,label: 'Reservation', href: '/services/'},
     {id: 4,label: 'Contact', href: '/contact/'},
 ]
 
