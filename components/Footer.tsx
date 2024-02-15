@@ -67,7 +67,7 @@ pinnacle of luxury car service where reliability, discretion, professionalism ar
             <h6 className='text-white text-lg font-semibold'>For More Information</h6>
             <Link className="underline flex justify-start gap-3 items-center" href="tel:+18158147071"><CellPhoneIcon/>1 (815) 814-7071</Link>
             <Link className="underline flex justify-start gap-3 items-center" href="https://www.google.com/maps/place/111+North+Wabash,+Suite+100,+Chicago,+IL+60602"><AddressIcon />111 North Wabash, Suite 100, Chicago, IL 60602 </Link>
-            <Link className="underline flex justify-start gap-3 items-center" href="mailto:alexb@eliteluxurylimo.com?subject=Elite Luxury Limousine&body=Hi"><GmailIcon/>alexb@eliteluxurylimo.com</Link>
+            <Link className="underline flex justify-start gap-3 items-center" href="mailto:alexb@eliteluxurylimo.com?subject=Elite Luxury Limousine&body=Hi"><GmailIcon/>info@eliteluxurylimo.com</Link>
             <FooterIcons/>
 </div>
         </div>

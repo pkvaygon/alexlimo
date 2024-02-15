@@ -7,7 +7,7 @@ export default function BlogCards({ images, ...props }: { images: BlogCardsProps
     return (
         <>
             {images.map((el, index) => (
-                <Card key={index} className="w-full bg-white text-black " radius="none" shadow="none" {...props}>
+                <Card key={index} className="w-full bg-black text-white " radius="none" shadow="none" {...props}>
                     <CardBody className="flex max-lg:flex-col flex-row  flex-wrap p-0 sm:flex-nowrap">
                         <Image
                         radius="none"
