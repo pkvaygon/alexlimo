@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import FooterIcon from '@/components/FooterIcon'
-import { AddressIcon, CellPhoneIcon } from './icons';
+import { AddressIcon, CellPhoneIcon, GmailIcon } from './icons';
 import FooterIcons from '@/components/FooterIcon';
 
 const navLinks = [
@@ -48,32 +48,34 @@ export default function Footer() {
         </div> */}
         <div className='grid grid-cols-3 max-sm:grid-cols-1  grid-flow-row gap-6'>
 <div className="w-full flex flex-col gap-3 justify-start items-start">
-  <h6 className='text-white text-lg font-semibold'>About Us</h6>
-  <p>Elite Luxury Limousine offers a new perspective on the black car service – for the Chicago area and suburbs. We don`t give you just another car transportation; we provide you with the whole experience of our services. What defines our service and attitude is professionalism, discretion, reliability and VIP treatment.</p>
+            <h6 className='text-white text-lg font-semibold'>About Us</h6>
+            <p>We are founded by a locally born and raised Chicagoan whose passion for black car transportation is rooted in the tradition of
+servitude. Our reputation has been built on providing unparalleled luxury car service for the Chicago area and suburbs. Discover the
+pinnacle of luxury car service where reliability, discretion, professionalism are provided with the VIP treatment you deserve.</p>
 </div>
 <div className="w-full flex flex-col gap-3 justify-start items-start">
   <h6 className='text-white text-lg font-semibold'>Our Services</h6>
   <ul className='flex flex-col gap-3'>
-    <li>Corporate Transportation & Roadshows</li>
-    <li>Special Occasions & Events</li>
-    <li>Airport Services & Transport</li>
-    <li>Night On The Town Rides</li>
-    <li>Sightseeing Tours</li>
-    <li>Sport Events</li>
+    <li>Airport Transportation</li>
+    <li>Corporate Services</li>
+    <li>Private Excursions & Tours</li>
+    <li>Events and  Special Occasions</li>
+    <li>Sporting Events & Concerts</li>
   </ul>
 </div>
 <div className="w-full flex flex-col gap-3 justify-start items-start">
             <h6 className='text-white text-lg font-semibold'>For More Information</h6>
-            <Link className="flex justify-start gap-3 items-center" href="tel:+18158147071"><CellPhoneIcon/>1 (815) 814-7071</Link>
-            <Link className="flex justify-start gap-3 items-center" href="https://www.google.com/maps/place/111+North+Wabash,+Suite+100,+Chicago,+IL+60602"><AddressIcon />111 North Wabash, Suite 100, Chicago, IL 60602 </Link>
+            <Link className="underline flex justify-start gap-3 items-center" href="tel:+18158147071"><CellPhoneIcon/>1 (815) 814-7071</Link>
+            <Link className="underline flex justify-start gap-3 items-center" href="https://www.google.com/maps/place/111+North+Wabash,+Suite+100,+Chicago,+IL+60602"><AddressIcon />111 North Wabash, Suite 100, Chicago, IL 60602 </Link>
+            <Link className="underline flex justify-start gap-3 items-center" href="mailto:alexb@eliteluxurylimo.com?subject=Elite Luxury Limousine&body=Hi"><GmailIcon/>alexb@eliteluxurylimo.com</Link>
             <FooterIcons/>
 </div>
         </div>
         <div className="flex justify-between max-sm:flex-col-reverse max-sm:items-start w-full items-center gap-6">
-        <p className=" text-center text-small text-default-400">
-          &copy; 2024 Alex Inc. All rights reserved.
+        <p className=" text-small text-default-400">
+          &copy; 2024 Elite Luxury Limousine. All rights reserved.
         </p>
-        <Link className="text-default-400 text-xs" href="/terms-conditions">terms & conditions</Link>
+        <Link className="text-default-400 text-small" href="/terms-conditions">terms & conditions</Link>
         </div>
       </div>
     </footer>

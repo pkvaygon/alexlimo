@@ -54,7 +54,7 @@ const closeMenu = () => {
         <NavbarContent className="max-md:hidden" justify="start">
           {navlinks.map(el => (
           <NavbarItem key={el.id} className="text-white">
-            <Link underline="active" className={pathname === el.href ? "text-[#F7B750]" : "text-white"}  href={el.href}>
+            <Link underline="active" className={"text-white"}  href={el.href}>
               {el.label}
             </Link>
           </NavbarItem>

@@ -5,12 +5,10 @@ import Image from 'next/image';
 
 export default function Reviews(){
 
-
     return(
         <section>
         <div className="w-full grid grid-cols-1 grid-rows-1 gap-2">
-            <h4 className="text-center text-2xl max-sm:text-4xl">It&apos;s a Simple Choice</h4>
-            <p className="text-center text-lg sm:text-base">We Set The Industry Benchmark</p>
+            <h4 className="text-center text-2xl max-sm:text-3xl">It&apos;s a Simple Choice</h4>
         </div>
         <div className=" container items-baseline h-auto py-9 grid max-sm:grid-cols-1 grid-cols-3 grid-flow-row gap-3">
             {

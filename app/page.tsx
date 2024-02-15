@@ -17,7 +17,7 @@ export default function Home() {
         <div className=" max-sm:w-[90%] sm:container sm:w-full max-sm:mx-auto gap-3 bg-black-800 flex flex-col justify-start items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
           <h1 className="text-8xl font-medium font-baskerville whitesd max-sm:text-3xl max-md:text-xl outline-1 outline-black outline-solid text-white ">Elite Luxury Limousine</h1>
           <h2 className="text-4xl max-sm:text-sm  max:md:text-md whitesd   w-full font-medium font-baskerville text-white">Experience isn&apos;t Expensive, it&apos;s Priceless</h2>
-<Link href="/book-online" className="px-12 py-4 bg-[#afa581] font-semibold text-lg rounded-sm text-white">Make a Reservation</Link>
+<Link href="/reservation" className="px-12 py-4 bg-[#afa581] font-semibold text-lg rounded-sm text-white">Make a Reservation</Link>
         </div>
       </div>
       </section>

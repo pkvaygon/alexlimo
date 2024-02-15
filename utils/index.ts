@@ -14,8 +14,8 @@ import image3 from '@/public/image_3.png'
 
 export const navlinks: NavlinksProps[] = [
     {id: 1,label: 'Home', href: '/'},
-    {id: 2,label: 'Book Online', href: '/book-online/'},
-    {id: 3,label: 'Reservation', href: '/services/'},
+    { id: 2, label: 'Reservation', href: '/reservation/' },
+    { id: 3, label: 'Corporations', href: '/corporations/' },
     {id: 4,label: 'Contact', href: '/contact/'},
 ]
 
@@ -107,6 +107,6 @@ export const reviews: ReviewProps[] = [
         rating: 5,
         image: "https://res.cloudinary.com/dxvf93ovn/image/upload/v1707531319/alexlimoicons/star_o96mhm.png",
         label: "Fastest Route Guarantee",
-        description: "All of our vehicles are equipped with the latest stae of the art navigation systems with real time weather and traffic data. This enables our drivers to execute the fastest and best route avoiding delays."
+        description: "All of our vehicles are equipped with the latest state of the art navigation systems with real time weather and traffic data. This enables our drivers to execute the fastest and best route avoiding delays."
     }
 ]

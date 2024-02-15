@@ -16,7 +16,7 @@ export default function Blog(){
         in style to and from your destinations.`
     },
     {
-        image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915755/corporate_yrv8fj.jpg',
+        image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031489/corporate_meeting_ioons7.jpg',
         label: 'Corporate Serviсes',
         description: `Elite Luxury Limousine is committed to providing our corporate limo service clientele with the best corporate transportation service
         available. Whether you’re entertaining existing or potential clients, company employees or just simply traveling to business
@@ -34,7 +34,7 @@ export default function Blog(){
         to take you there.`,
     },
     {
-        image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915759/events_uwxjyb.jpg',
+        image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031549/events2_nkd62t.jpg',
         label: 'Events & Special Occasions',
         description: `Elite Luxury Limousine specializes in providing you the highest level of professional transportation limousine services for any and all
         of your big moment and once-in-a-lifetime events and occasions. Let our professional chauffeurs drive you to that special
