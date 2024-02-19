@@ -94,6 +94,7 @@ background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: top;
 }
 .embla__slide__number {
   width: 100%;
