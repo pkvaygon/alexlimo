@@ -27,7 +27,7 @@ export default function HeaderTitle(){
         }}
         className="text-4xl max-sm:text-sm max-md:text-md whitesd w-full font-medium font-baskerville text-white"
       >
-        Experience isn't Expensive, it's Priceless
+        Experience isn&apos;t Expensive, it&apos;s Priceless
       </motion.h2>
 
         </>
