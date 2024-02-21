@@ -7,6 +7,7 @@ import ad from '@/public/adpicture.jpg'
 import BannerVideo from '@/components/BannerVideo'
 import HomeBanner from '@/components/HomeBanner'
 import HeaderTitle from '@/components/HeaderTitle';
+import Testimonals from './../components/Testimonals';
 
 export default function Home() {
 
@@ -45,6 +46,7 @@ tradition where integrity and reliability resonate throughout the organization.<
       <article className="container py-8">
         <Blog/>
       </article>
+      <Testimonals/>
       <Reviews/>
     </>
   );
