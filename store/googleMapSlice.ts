@@ -22,7 +22,9 @@ const initialState: GoogleMapStateProps = {
         bags: 0,
         selectedVehicle: null,
         airline: "",
-        flight: ""
+        flight: "",
+        pickup_date: '',
+        pickup_time: ''
     },
     checkPricing: false,
     termsConditions: false,
@@ -32,6 +34,14 @@ export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
+        updatePickupDate: (state, action) => {
+            state.results.pickup_date = action.payload;
+          },
+      
+          // Добавляем редюсер для обновления времени
+          updatePickupTime: (state, action) => {
+            state.results.pickup_time = action.payload;
+          },
         resultAirline: (state,action:PayloadAction<string>)=>{
         state.results.airline = action.payload
         },
@@ -134,7 +144,9 @@ export const { chooseServiceDetail,setLocation, setLocationB, clearLocation, cle
     resultFlight,
     resultAirportName,
     resultDropoff,
-    resultPickup
+    resultPickup,
+    updatePickupDate,
+    updatePickupTime
 } = googleMapSlice.actions;
 
 export default googleMapSlice.reducer;

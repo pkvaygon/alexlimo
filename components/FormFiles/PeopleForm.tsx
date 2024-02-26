@@ -90,6 +90,8 @@ React.useEffect(() => {
       selectedVehicle: sendResult?.selectedVehicle?.name || '' ,
       airline: sendResult.airline || '' ,
       flight: sendResult.flight || '' ,
+      pickup_date: sendResult.pickup_date,
+      pickup_time: sendResult.pickup_time
     };
       await sendEmailJs(combinedData)
   }

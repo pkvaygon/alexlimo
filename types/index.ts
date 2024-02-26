@@ -27,7 +27,9 @@ export interface ResultsProps{
   bags: number,
   selectedVehicle?:VehicleProps | null,
   airline: string,
-  flight: string
+  flight: string,
+  pickup_date: string,
+  pickup_time: string
 }
 export interface GoogleMapStateProps {
   location: LocationProps;
