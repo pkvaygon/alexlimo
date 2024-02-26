@@ -33,3 +33,14 @@ export async function sendEmailJs(data) {
           console.log('FAILED...', error);
         });
 }
+
+export async function sendContactUsForm(data){
+
+
+  emailjs.send("service_998xq47","template_rwl6bac",{
+    from_name: data.name,
+    to_name: "Alex Limo",
+    phone_number: data.phone_number,
+    message: data.message,
+  },{publicKey: "Qdoh3j0eeWCg7Vl-s"})
+}

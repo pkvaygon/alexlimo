@@ -7,7 +7,8 @@ import BlogCards from './BlogCards';
 
 export default function Blog(){
     const images = [
-    {
+        {
+        id: 'airport',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/airtransport_fzsw07.jpg',
         label: 'Airport Transportation',
         description: `We are is the premier service to utilize for airport transportation service whether it’s to or from the airport. We serve
@@ -15,7 +16,8 @@ export default function Blog(){
         provide the service you expect. We take great pride in making sure our clients enjoy first-class service and comfort as you travel
         in style to and from your destinations.`
     },
-    {
+        {
+        id: 'corporate',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031489/corporate_meeting_ioons7.jpg',
         label: 'Corporate Serviсes',
         description: `We are is committed to providing our corporate limo service clientele with the best corporate transportation service
@@ -24,7 +26,8 @@ export default function Blog(){
         chauffeurs are professionally trained drivers who are dedicated to making your business transportation service experience with
         Elite Luxury Limo the best possible.`,
     },
-    {
+        {
+        id: 'tours',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/privatetour_badhzi.jpg',
         label: 'Private Excursion & Tours',
         description: `We offer charter services in order to afford you a way to explore in luxury many well-known beautiful and
@@ -33,7 +36,8 @@ export default function Blog(){
         beaten path it’s not an issue simply provide your chauffer with the details and address if available and they’ll be more than happy
         to take you there.`,
     },
-    {
+        {
+        id: 'events',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031549/events2_nkd62t.jpg',
         label: 'Events & Special Occasions',
         description: `We specialize in providing you the highest level of professional transportation limousine services for any and all
@@ -42,7 +46,7 @@ export default function Blog(){
     },
     ]
 return(
-    <div className="grid grid-cols-1 grid-flow-row sm:grid-cols-1 md:grid-cols-2  sm:grid-rows-2  max-lg:gap-y-3">
+    <div id="corporations" className="grid grid-cols-1 grid-flow-row sm:grid-cols-1 md:grid-cols-2  sm:grid-rows-2  max-lg:gap-y-3">
         <BlogCards images={images} />
     </div>
     )

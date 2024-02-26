@@ -52,6 +52,7 @@ export interface VehicleProps{
     price: number,
 }
 export interface BlogCardsProps{
+  id: string,
   image:string,
   label: string,
   description: string,
