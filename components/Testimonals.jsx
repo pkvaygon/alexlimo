@@ -8,27 +8,44 @@ import { Card } from '@nextui-org/react';
 export default function Testimonals() {
     const testimonals = [
         {
-            name: "B Howard",
+            name: "Garret Knorr",
             date: "3 days ago",
-            text: "Service is excellent, Andy is great driver! Well ran company",
+            text: `I've used many limo services for many
+            decades but found Elite Luxury Limousine
+            to be the best. Their drivers are courteous
+            and their dispatcher (Norm) was especially
+            helpful during our recent travels.`,
             rating: 5
         },
         {
-            name: "Phillip Lord",
+            name: "Robert Williams",
             date: "18 days ago",
-            text: "Service is excellent, Andy is great driver! Well ran company",
+            text: `Our driver was waiting for us when we
+            arrived at the airport. The drive was smooth
+            and uneventful just how I like it! Extremely
+            professional from start to finish. We will be
+            using Elite Luxury Limousine again.`,
             rating: 5
         },
         {
-            name: "CONNIE STATON",
+            name: "Elizabeth Alvarez",
             date: "1 month ago",
-            text: "Service is excellent, Andy is great driver! Well ran company",
+            text: `The quality of service and their
+            flexibility is top notch. I’ve been
+            fortunate to use their services a few
+            times and not once have I not been
+            satisfied.`,
             rating: 5
         },
         {
-            name: "Catherine Seidler",
+            name: "Mitch Mccrea",
             date: "1 month ago",
-            text: "Service is excellent, Andy is great driver! Well ran company",
+            text: `We were happy with our drivers Alexis and
+            Chris. They were able to get us through
+            parade traffic and then airport construction
+            so we could make our flight in plenty of
+            time. We will definitely be contacting Elite
+            Luxury Limousine for our next visit.`,
             rating: 5
         },
         

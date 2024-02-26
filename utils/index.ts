@@ -13,7 +13,7 @@ export const navlinks: NavlinksProps[] = [
   { id: 1, label: "Home", href: "/" },
   { id: 2, label: "Reservation", href: "/reservation/" },
   { id: 3, label: "Corporations", href: "/corporations/" },
-  { id: 4, label: "Contact", href: "/contact/" },
+  { id: 4, label: "Contact Us", href: "/contact/" },
 ];
 
 export const images: any[] = [image1, image2, image3];

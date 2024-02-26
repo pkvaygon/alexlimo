@@ -9,6 +9,17 @@ export default function TermsConditions() {
                 <h2 className="yellow-tc text-center">Terms & Conditions</h2>
             </div>
             <div className="my-4 flex flex-col gap-3">
+                <h3>Privacy Policy</h3>
+                <p>Elite Luxury Limousine respects your privacy and your name
+and personal information will not be given to anyone without
+your consent. The information you supply is used to improve
+service and customize offers to you. Your name and address
+will only be used by Elite Luxury Limousine or its assignees for
+the purpose of rendering service or to collect payments for
+services rendered. Your email address is used for sending
+confirmations, information and service enhancements.</p>
+            </div>
+            <div className="my-4 flex flex-col gap-3">
                 <h3 className="yellow-tc">General</h3>
                 <p>In order to provide you with our true luxury limousine service, we request you book your reservation a minimum of 12 hours in advance.
 Under normal circumstances, reservations can be made with as little as one hour’s notice and are subject to availability. Requests for online

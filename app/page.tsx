@@ -46,8 +46,8 @@ tradition where integrity and reliability resonate throughout the organization.<
       <article className="container py-8">
         <Blog/>
       </article>
-      <Testimonals/>
       <Reviews/>
+      <Testimonals/>
     </>
   );
 }
