@@ -9,7 +9,7 @@ export default function TermsConditions() {
                 <h2 className="yellow-tc text-center">Terms & Conditions</h2>
             </div>
             <div className="my-4 flex flex-col gap-3">
-                <h3>Privacy Policy</h3>
+                <h3 className="yellow-tc">Privacy Policy</h3>
                 <p>Elite Luxury Limousine respects your privacy and your name
 and personal information will not be given to anyone without
 your consent. The information you supply is used to improve

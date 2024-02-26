@@ -12,7 +12,7 @@ export default function HeaderTitle(){
           duration: 1.5,
           ease: "easeInOut"
         }}
-        className="text-8xl font-medium font-baskerville whitesd max-sm:text-3xl max-md:text-xl outline-1 outline-black outline-solid text-white "
+        className="text-7xl font-medium font-baskerville whitesd max-sm:text-3xl max-md:text-xl outline-1 outline-black outline-solid text-white "
       >
         Elite Luxury Limousine
       </motion.h1>
@@ -25,7 +25,7 @@ export default function HeaderTitle(){
           ease: "easeInOut",
           delay: 0.5
         }}
-        className="text-4xl max-sm:text-sm max-md:text-md whitesd w-full font-medium font-baskerville text-white"
+        className="text-3xl max-sm:text-sm max-md:text-md whitesd w-full font-medium font-baskerville text-white"
       >
         Experience isn&apos;t Expensive, it&apos;s Priceless
       </motion.h2>
