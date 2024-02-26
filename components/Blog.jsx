@@ -46,7 +46,7 @@ export default function Blog(){
     },
     ]
 return(
-    <div id="corporations" className="grid grid-cols-1 grid-flow-row sm:grid-cols-1 md:grid-cols-2  sm:grid-rows-2  max-lg:gap-y-3">
+    <div id="services" className="scroll-mt-20 grid grid-cols-1 grid-flow-row sm:grid-cols-1 md:grid-cols-2  sm:grid-rows-2  max-lg:gap-y-3">
         <BlogCards images={images} />
     </div>
     )

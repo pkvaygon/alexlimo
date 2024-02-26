@@ -56,10 +56,10 @@ pinnacle of luxury car service where reliability, discretion, professionalism ar
 <div className="w-full flex flex-col gap-3 justify-start items-start">
   <h6 className='text-white text-lg font-semibold'>Our Services</h6>
   <ul className='flex flex-col gap-3'>
-    <li>Airport Transportation</li>
-    <li>Corporate Services</li>
-    <li>Private Excursions & Tours</li>
-    <li>Events and  Special Occasions</li>
+    <li><Link href="#airport">Airport Transportation</Link></li>
+    <li><Link href="#corporate">Corporate Services</Link></li>
+    <li><Link href="#tours">Private Excursions & Tours</Link></li>
+    <li><Link href="#events">Events and  Special Occasions</Link></li>
     <li>Sporting Events & Concerts</li>
   </ul>
 </div>
