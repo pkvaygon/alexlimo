@@ -11,13 +11,18 @@ import { updatePickupDate, updatePickupTime } from "@/store/googleMapSlice";
 const DateComponent: React.FC = () => {
   const dispatch = useDispatch();
 
-  const handleDateChange = (date: string) => {
-    dispatch(updatePickupDate(date));
+  const handleDateChange = (date: string | null) => {
+    if (date) {
+      dispatch(updatePickupDate(date));
+    }
   };
 
-  const handleTimeChange = (time: string) => {
-    dispatch(updatePickupTime(time));
+  const handleTimeChange = (time: string | null) => {
+    if (time) {
+      dispatch(updatePickupTime(time));
+    }
   };
+
   return (
     <div className="p-4 gap-3 w-full flex justify-between items-start">
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -25,12 +30,13 @@ const DateComponent: React.FC = () => {
              label={<span className="">Pick-up Date</span>} 
               className="w-full bg-white  text-white" 
           defaultValue={dayjs(new Date())}
-          onChange={(e) => handleDateChange(e.toDate().toDateString())} 
+          onChange={(e) => e && handleDateChange(e.toDate().toDateString())}
+
                slotProps={{ 
                 textField: { InputProps: { color: 'primary' },
                }}}
                />
-            <TimePicker onChange={(e) => handleTimeChange(e.format('HH:mm'))}  label={<span className="">Pick-up Time</span>} className="w-full  text-white" defaultValue={dayjs('2022-04-17T15:30')} />
+            <TimePicker onChange={(e) => e && handleTimeChange(e.format('HH:mm'))}  label={<span className="">Pick-up Time</span>} className="w-full  text-white" defaultValue={dayjs('2022-04-17T15:30')} />
       </LocalizationProvider>
     </div>
   );

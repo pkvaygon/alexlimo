@@ -34,12 +34,12 @@ export const googleMapSlice = createSlice({
     name: 'googleMap',
     initialState,
     reducers: {
-        updatePickupDate: (state, action) => {
+        updatePickupDate: (state, action: PayloadAction<string>) => {
             state.results.pickup_date = action.payload;
           },
       
           // Добавляем редюсер для обновления времени
-          updatePickupTime: (state, action) => {
+          updatePickupTime: (state, action:PayloadAction<string>) => {
             state.results.pickup_time = action.payload;
           },
         resultAirline: (state,action:PayloadAction<string>)=>{
