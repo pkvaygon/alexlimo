@@ -7,7 +7,7 @@ import mersBus from "@/public/mers_bus.png";
 
 import image1 from "@/public/image_1.png";
 import image2 from "@/public/image_2.png";
-import image3 from "@/public/image_3.png";
+import image3 from "@/public/purplegirl.jpg";
 
 export const navlinks: NavlinksProps[] = [
   { id: 1, label: "Home", href: "/" },

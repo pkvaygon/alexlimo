@@ -48,13 +48,32 @@ export default function Testimonals() {
             Luxury Limousine for our next visit.`,
             rating: 5
         },
+        {
+            name: "Scott A",
+            date: "1 month ago",
+            text: `Top notch service. Gladly recommend this
+            company. Will use again for sure!`,
+            rating: 5
+        },
+        {
+            name: "Phillip Weber",
+            date: "1 month ago",
+            text: `Our driver was waiting for us when
+            we arrived at the airport as they track
+            the flight. The drive was smooth and
+            uneventful just how I like it!
+            Extremely professional from start to
+            finish. Will be using Elite Luxury
+            Limousine again.`,
+            rating: 5
+        },
         
      ];
     return (
-        <section className="w-full p-4 max-sm:py-6 grid grid-cols-4 max-sm:grid-cols-1 gap-3 grid-flow-row">
+         <section className="carousel carousel-center max-w-full p-4 space-x-4 bg-neutral rounded-box">
             {
                 testimonals.map((el, index) => (
-                    <Card className='text-[#fff] h-auto p-4 bg-black/50 flex flex-col gap-2' key={index}>
+                    <Card className='text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2' key={index}>
                         <h6>{el.name}</h6>
                         <div className="flex">
             {[...Array(5)].map((_, starIndex) => (
