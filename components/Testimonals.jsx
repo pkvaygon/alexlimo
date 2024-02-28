@@ -9,7 +9,7 @@ export default function Testimonals() {
     const testimonals = [
         {
             name: "Garret Knorr",
-            date: "3 days ago",
+            // date: "3 days ago",
             text: `I've used many limo services for many
             decades but found Elite Luxury Limousine
             to be the best. Their drivers are courteous
@@ -19,7 +19,7 @@ export default function Testimonals() {
         },
         {
             name: "Robert Williams",
-            date: "18 days ago",
+            // date: "18 days ago",
             text: `Our driver was waiting for us when we
             arrived at the airport. The drive was smooth
             and uneventful just how I like it! Extremely
@@ -29,7 +29,7 @@ export default function Testimonals() {
         },
         {
             name: "Elizabeth Alvarez",
-            date: "1 month ago",
+            // date: "1 month ago",
             text: `The quality of service and their
             flexibility is top notch. I’ve been
             fortunate to use their services a few
@@ -39,7 +39,7 @@ export default function Testimonals() {
         },
         {
             name: "Mitch Mccrea",
-            date: "1 month ago",
+            // date: "1 month ago",
             text: `We were happy with our drivers Alexis and
             Chris. They were able to get us through
             parade traffic and then airport construction
@@ -50,14 +50,14 @@ export default function Testimonals() {
         },
         {
             name: "Scott A",
-            date: "1 month ago",
+            // date: "1 month ago",
             text: `Top notch service. Gladly recommend this
             company. Will use again for sure!`,
             rating: 5
         },
         {
             name: "Phillip Weber",
-            date: "1 month ago",
+            // date: "1 month ago",
             text: `Our driver was waiting for us when
             we arrived at the airport as they track
             the flight. The drive was smooth and
@@ -70,7 +70,7 @@ export default function Testimonals() {
         
      ];
     return (
-         <section className="carousel carousel-center max-w-full p-4 space-x-4 bg-neutral rounded-box">
+         <section className="carousel carousel-center max-w-full p-4 space-x-4  rounded-none">
             {
                 testimonals.map((el, index) => (
                     <Card className='text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2' key={index}>
@@ -80,7 +80,7 @@ export default function Testimonals() {
               <StarIcon key={starIndex} />
             ))}
           </div>
-                        <span>{el.date}</span>
+                        {/* <span>{el.date}</span> */}
                         <p className="text-default-400">{el.text}</p>
                 </Card>
                 ))
