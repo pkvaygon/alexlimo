@@ -15,7 +15,7 @@ export default function HomeBanner() {
   }
   const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 5000})])
     return (
-        <section className="w-full h-full">
+        <section className="w-full h-full mt-[68px] md:mt-[80px]">
         <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">

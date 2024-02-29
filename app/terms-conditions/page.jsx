@@ -98,7 +98,7 @@ illegal drugs is permitted.</p>
                 <p>All U.S. Law enforcement agencies have absolute power to stop any motor vehicle for administrative searches. If contraband is aboard, even
 in negligible quantities, they can seize and forfeit the vehicle to a local government agency. All law enforcement agencies are aggressively
 enforcing this policy. Therefore, no person will bring illegal substances aboard vehicles that are owned or operated by Elite Luxury
-Limousine. Person (s) under the age of 21 is/are prohibited from consuming any type of acholic beverage.</p>
+Limousine. Person (s) under the age of 21 is/are prohibited from consuming any type of alcoholic beverage.</p>
             </div>
             <div className=" flex flex-col gap-3">
                 <h3 className="yellow-tc">No Smoking Policy</h3>
@@ -119,13 +119,6 @@ held responsible, and the reservation will be marked as Time Requested by Client
                 <h3 className="yellow-tc">Acceptance of Terms and Conditions</h3>
                 <p>Client has read the terms and conditions stated above and agrees to all stated terms and conditions. This agreement will be considered
 accepted in its entirety when Client checks the “I Agree” box provided in the Online reservation – Booking Form of this Website.</p>
-            </div>
-            <div className=" flex flex-col gap-3">
-                <h3 className="yellow-tc">Privacy Policy</h3>
-                <p>Elite Luxury Limousine respects your privacy and your name and personal information will not be given to anyone without your consent.
-The information you supply is used to improve service and customize offers to you. Your name and address will only be used by Elite Luxury
-Limousine or its assignees for the purpose of rendering service or to collect payments for services rendered. Your email address is used for
-sending confirmations, information and service enhancements.</p>
             </div>
         </section>
         )
