@@ -8,17 +8,7 @@ export default function TermsConditions() {
             <div className="dark text-white">
                 <h2 className="yellow-tc text-center">Terms & Conditions</h2>
             </div>
-            <div className="my-4 flex flex-col gap-3">
-                <h3 className="yellow-tc">Privacy Policy</h3>
-                <p>Elite Luxury Limousine respects your privacy and your name
-and personal information will not be given to anyone without
-your consent. The information you supply is used to improve
-service and customize offers to you. Your name and address
-will only be used by Elite Luxury Limousine or its assignees for
-the purpose of rendering service or to collect payments for
-services rendered. Your email address is used for sending
-confirmations, information and service enhancements.</p>
-            </div>
+            
             <div className="my-4 flex flex-col gap-3">
                 <h3 className="yellow-tc">General</h3>
                 <p>In order to provide you with our true luxury limousine service, we request you book your reservation a minimum of 12 hours in advance.
@@ -119,6 +109,17 @@ held responsible, and the reservation will be marked as Time Requested by Client
                 <h3 className="yellow-tc">Acceptance of Terms and Conditions</h3>
                 <p>Client has read the terms and conditions stated above and agrees to all stated terms and conditions. This agreement will be considered
 accepted in its entirety when Client checks the “I Agree” box provided in the Online reservation – Booking Form of this Website.</p>
+            </div>
+            <div className="my-4 flex flex-col gap-3">
+                <h3 className="yellow-tc">Privacy Policy</h3>
+                <p>Elite Luxury Limousine respects your privacy and your name
+and personal information will not be given to anyone without
+your consent. The information you supply is used to improve
+service and customize offers to you. Your name and address
+will only be used by Elite Luxury Limousine or its assignees for
+the purpose of rendering service or to collect payments for
+services rendered. Your email address is used for sending
+confirmations, information and service enhancements.</p>
             </div>
         </section>
         )
