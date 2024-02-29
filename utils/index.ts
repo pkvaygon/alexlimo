@@ -88,6 +88,27 @@ export const airports: AiportProps[] = [
     lat: 41.6011247,
     lng: -87.4237198,
   },
+  {
+    key: "atlantic",
+    name: "Atlantic Aviation MDW",
+    address: "6150 S Laramie Ave, Chicago, IL 60638",
+    lat: 41.78060280512733,
+    lng: -87.75312147827148
+  },
+  {
+    key: "signatureord",
+    name: "Signature Aviation ORD",
+    address: "825 Patton Dr Building 825, Chicago, IL 60666",
+    lat: 41.991052258549445,
+    lng: -87.88976456213948
+  },
+  {
+    key: "signaturemdw",
+    name: "Signature Aviation MDW",
+    address: "5821 S Central Ave, Chicago, IL 60638",
+    lat: 41.786344605237694, 
+    lng: -87.76169627298191
+  },
 ];
 
 export const reviews: ReviewProps[] = [
