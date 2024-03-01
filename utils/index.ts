@@ -14,7 +14,7 @@ export const navlinks: NavlinksProps[] = [
   { id: 2, label: "Reservation", href: "/reservation/" },
   { id: 3, label: "Services", href: "#services" },
   { id: 4, label: "Corporations", href: "#corporations" },
-  { id: 5, label: "Contact Us", href: "#contactusform" },
+  { id: 5, label: "Contact Us", href: "/contact-us" },
 ];
 
 export const images: any[] = [image1, image2, image3];

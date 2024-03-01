@@ -41,6 +41,7 @@ export async function sendContactUsForm(data){
     from_name: data.name,
     to_name: "Alex Limo",
     phone_number: data.phone_number,
+    email: data.email,
     message: data.message,
   },{publicKey: "Qdoh3j0eeWCg7Vl-s"})
 }
