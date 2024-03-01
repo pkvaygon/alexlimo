@@ -8,7 +8,6 @@ import BannerVideo from '@/components/BannerVideo'
 import HomeBanner from '@/components/HomeBanner'
 import HeaderTitle from '@/components/HeaderTitle';
 import Testimonals from './../components/Testimonals';
-import ContactUsForm from '@/components/ContactUs-form'
 export default function Home() {
 
   return (
