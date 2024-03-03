@@ -75,7 +75,11 @@ pinnacle of luxury car service where reliability, discretion, professionalism ar
         <p className=" text-small text-default-400">
           &copy; 2024 Elite Luxury Limousine. All rights reserved.
         </p>
-        <Link className="text-default-400 text-small" href="/terms-conditions">Privacy Policy / Terms & Conditions</Link>
+        <div className='flex justify-start items-center gap-1'>
+        <Link className="text-default-400 text-small" href="/privacy-policy">Privacy Policy</Link>
+        <span>/</span>
+        <Link className="text-default-400 text-small" href="/terms-conditions">Terms & Conditions</Link>
+        </div>
         </div>
       </div>
     </footer>
