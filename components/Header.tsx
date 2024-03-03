@@ -29,7 +29,7 @@ const closeMenu = () => {
                 />
           <NavbarBrand className="p-0 flex flex-start max-sm:w-[10%] h-full">
             <div className=" p-0 max-sm:w-full w-full h-full relative">
-            <Image className="object-contain w-full h-full" objectPosition="center"  priority src={logo} alt="logo"/>
+            <Image className="object-contain w-full h-full select-none" objectPosition="center"  priority src={logo} alt="logo"/>
             </div>
         </NavbarBrand>
         </NavbarContent>

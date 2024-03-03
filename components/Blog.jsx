@@ -11,7 +11,7 @@ export default function Blog(){
         id: 'airport',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/airtransport_fzsw07.jpg',
         label: 'Airport Transportation',
-        description: `We are is the premier service to utilize for airport transportation service whether it’s to or from the airport. We serve
+        description: `We are the premier service to utilize for airport transportation service whether it’s to or from the airport. We serve
         all major airports as well as all private jet centers. We offer world class airport car service our chauffeurs go above and beyond to
         provide the service you expect. We take great pride in making sure our clients enjoy first-class service and comfort as you travel
         in style to and from your destinations.`
@@ -20,7 +20,7 @@ export default function Blog(){
         id: 'corporate',
         image:'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031489/corporate_meeting_ioons7.jpg',
         label: 'Corporate Serviсes',
-        description: `We are is committed to providing our corporate limo service clientele with the best corporate transportation service
+        description: `We are committed to providing our corporate limo service clientele with the best corporate transportation service
         available. Whether you’re entertaining existing or potential clients, company employees or just simply traveling to business
         meetings…Elite Luxury Limo has the vehicles and professionalism to serve all your corporate transportation needs. All of our
         chauffeurs are professionally trained drivers who are dedicated to making your business transportation service experience with

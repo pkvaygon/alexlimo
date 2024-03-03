@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { Image } from 'next/image';
 import { StarIcon } from './icons';
 import { Card } from '@nextui-org/react';
@@ -68,9 +69,9 @@ export default function Testimonals() {
             rating: 5
         },
         
-     ];
+    ];
     return (
-         <section className="carousel carousel-center max-w-full p-4 space-x-4  rounded-none">
+         <section  className="carousel carousel-center max-w-full p-4 space-x-4 overflow-x-scroll  rounded-none relative">
             {
                 testimonals.map((el, index) => (
                     <Card className='text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2' key={index}>
@@ -83,9 +84,8 @@ export default function Testimonals() {
                         {/* <span>{el.date}</span> */}
                         <p className="text-default-400">{el.text}</p>
                 </Card>
-                ))
-            }
-
+      ))
+    }
     </section>
         )
 
