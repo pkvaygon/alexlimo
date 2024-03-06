@@ -4,7 +4,7 @@ import { RootState,VehicleProps } from '@/types';
 import { MinusIcon, PlusIcon } from './../icons/';
 import { useSelector, useDispatch } from 'react-redux';
 import {chooseVehicle, incrementTravellers, decrementTravellers, incrementBags, decrementBags, clearLocation, clearLocationB,changeCheckStatus } from '@/store/googleMapSlice'
-import {Link,Checkbox,Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Chip,Link,Checkbox,Input,ButtonGroup,Card, CardFooter, Image,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import { vehicles } from '@/utils';
 import { CldImage } from 'next-cloudinary';
 import {airports} from '@/utils'
@@ -46,7 +46,7 @@ const handleBagsDecrement = () => {
 };
 type ScrollBehavior = "normal" | "inside" | "outside";
 const [scrollBehavior, setScrollBehavior] = React.useState<ScrollBehavior>('normal');
-
+const [requestSent, setRequestSent] = React.useState(false)
 React.useEffect(() => {
   const handleResize = () => {
     const newScrollBehavior = window.innerWidth <= 540 ? 'inside' : 'normal';
@@ -94,6 +94,7 @@ React.useEffect(() => {
       pickup_time: sendResult.pickup_time
     };
       await sendEmailJs(combinedData)
+      setRequestSent(true)
   }
   return(
     <>
@@ -145,7 +146,7 @@ React.useEffect(() => {
                           <p className="text-tiny text-white">Passengers: {el.passengers} - Bags: {el.bags}</p>
                         </div>
                       </div>
-                      <Button radius="full" size="sm">{el.price}$</Button>
+                      <Button radius="full" size="sm">Request a Quote</Button>
                     </CardFooter>
                   </Card>
                   </div>
@@ -181,6 +182,11 @@ React.useEffect(() => {
       <div className="flex flex-col items-start ">
         <p className="text-large">Personal Info</p>
       </div>
+      {
+      requestSent ? (
+        <Chip color="success">Request has been sent!</Chip>
+        )
+        : (     
                           <form action={onSubmit}>
                             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Input name="username" label="Username" labelPlacement="outside" placeholder="Enter username" />
@@ -194,8 +200,10 @@ React.useEffect(() => {
                     <p className="text-xs">By checking this box you agree to our <Link showAnchorIcon isExternal underline="always" href="/terms-conditions">Terms & Conditions</Link></p>
                           <Checkbox isRequired isSelected={isSelected} onValueChange={setIsSelected}></Checkbox>
                             </div>
-                            <button className="bg-white rounded-sm text-black px-3 py-2" type="submit">Submit</button>
+                          <button className="bg-white rounded-sm text-black px-3 py-2" type="submit">Request a Quote</button>
       </form>
+          )
+      }
     </div> 
                   </div>
     </section>
@@ -203,10 +211,7 @@ React.useEffect(() => {
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={ vehicleSelected === false ? onClose : onCanceled}>
-                  Cancel
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Submit
+                  Close
                 </Button>
               </ModalFooter>
             </>
