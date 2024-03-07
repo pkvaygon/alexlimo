@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://acme.com/about',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: 'https://acme.com/blog',

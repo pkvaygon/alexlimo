@@ -4,7 +4,6 @@ import "./globals.css";
 import Providers from "@/providers";
 import Header from "@/components/Header";
 import Footer from '@/components/Footer'
-import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     title: 'Elite Luxury Limo Order Ride',
     description: 'Professional Chauffeur Services for Seamless Journeys! Book our services and enjoy a stylish and safe ride, regardless of your destination. We provide reliable and experienced chauffeurs ready to meet you at the airport or serve as your personal driver. With a modern fleet, high-quality service, and affordable rates, entrust your journey to professionals and make every ride a hassle-free experience!',
     url: 'https://alexlimo.vercel.app/',
-    siteName: 'Next.js',
+    siteName: 'ELite Luxury Limousine',
     images: [
       {
         url: 'https://nextjs.org/og.png', // Must be an absolute URL
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   creator: 'Askar Zhaanbaev',
-  publisher: 'Alex limousine',
+  publisher: 'Alex Limo',
   alternates: {
     canonical: '/',
     languages: {
@@ -96,12 +95,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '@/public/vercel.svg',
-    shortcut: '@/public/vercel.svg',
-    apple: '@/public/vercel.svg',
+    icon: '/croplogo.png',
+    shortcut: '/croplogo.png',
+    apple: '/croplogo.png',
     other: {
-      rel: '@/public/vercel.svg',
-      url: '@/public/vercel.svg',
+      rel: '/croplogo.png',
+      url: '/croplogo.png',
     },
   },
 };

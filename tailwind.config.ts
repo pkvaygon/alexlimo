@@ -12,12 +12,12 @@ const config: Config = {
       fontFamily: {
         bartkey: ["BARTKEY", "sans-serif"],
         timesroman: ["Times New Roman", "sans-serif"],
-        rochester: ['Rochester', "sans-serif"],
-        baskerville: ['Baskerville',"sans-serif"]
+        rochester: ["Rochester", "sans-serif"],
+        baskerville: ["Baskerville", "sans-serif"],
       },
     },
   },
   darkMode: "class",
-  plugins: [nextui(), require('daisyui')],
+  plugins: [nextui(), require("daisyui")],
 };
 export default config;
