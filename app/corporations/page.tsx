@@ -1,7 +1,7 @@
 import Link from "next/link";
 import private_driver from "@/public/benze.jpg";
 import Image from "next/image";
-import ad from "@/public/adpicture.jpg";
+import ad from "@/public/corporation_banner.jpg";
 export default function CorporationsPage() {
   return (
     // <section className=" sm:mt-[80px] py-5 text-[#D4D4D8] flex-row w-full sm:h-[500px]  flex max-sm:h-[740px]  max-sm:flex-col max-md:flex-row max-md:h-[90vh] max-lg:h-[400px] lg:flex-row ">
@@ -45,9 +45,9 @@ export default function CorporationsPage() {
     //     </div>
     //   </div>
     // </section>
-    <section className="w-[90%] mx-auto max-sm:mt-[68px] mt-[80px] py-10">
+    <section className=" max-sm:mt-3 mt-[36px] pt-10">
       <article className="w-full shadow-lg relative max-sm:h-[80px] h-[200px] max-sm:my-3">
-        <div className=" font-timesroman absolute z-10 text-lg sm:text-[36px] max-sm:left-[10%]  max-sm:top-[10%] left-16 top-20 text-white">
+        <div className=" font-timesroman absolute z-10 text-sm sm:text-4xl max-sm:left-[10%]  max-sm:top-[10%] left-16 top-20 text-white">
           Make your trip an unforgettable moment together.
         </div>
         <Image
@@ -59,7 +59,7 @@ export default function CorporationsPage() {
         />
       </article>
       <section className="w-full max-sm:h-auto flex h-[400px] max-md:flex-col justify-between items-start ">
-        <div className="max-md:w-full max-sm:h-auto  w-1/2 h-full gap-4 flex flex-col justify-between items-start p-4">
+        <div className="max-md:w-full max-sm:h-auto  w-1/2 h-full gap-4 flex flex-col justify-start items-start p-4">
           <h2 className="max-sm:text-2xl text-4xl">Budget Friendly Corporate Service</h2>
           <p>
             Corporate Limousine can be used for a variety of reasons. For

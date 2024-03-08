@@ -1,11 +1,9 @@
 "use client";
-import React from 'react';
-import { Image } from 'next/image';
-import { StarIcon } from './icons';
-import { Card } from '@nextui-org/react';
-   
+import React from "react";
+import { Image } from "next/image";
+import { StarIcon } from "./icons";
+import { Card, ScrollShadow } from "@nextui-org/react";
 
-    
 export default function Testimonals() {
     const testimonals = [
         {
@@ -16,7 +14,7 @@ export default function Testimonals() {
             to be the best. Their drivers are courteous
             and their dispatcher (Norm) was especially
             helpful during our recent travels.`,
-            rating: 5
+            rating: 5,
         },
         {
             name: "Robert Williams",
@@ -26,7 +24,7 @@ export default function Testimonals() {
             and uneventful just how I like it! Extremely
             professional from start to finish. We will be
             using Elite Luxury Limousine again.`,
-            rating: 5
+            rating: 5,
         },
         {
             name: "Elizabeth Alvarez",
@@ -36,7 +34,7 @@ export default function Testimonals() {
             fortunate to use their services a few
             times and not once have I not been
             satisfied.`,
-            rating: 5
+            rating: 5,
         },
         {
             name: "Mitch Mccrea",
@@ -47,14 +45,14 @@ export default function Testimonals() {
             so we could make our flight in plenty of
             time. We will definitely be contacting Elite
             Luxury Limousine for our next visit.`,
-            rating: 5
+            rating: 5,
         },
         {
             name: "Scott A",
             // date: "1 month ago",
             text: `Top notch service. Gladly recommend this
             company. Will use again for sure!`,
-            rating: 5
+            rating: 5,
         },
         {
             name: "Phillip Weber",
@@ -66,27 +64,36 @@ export default function Testimonals() {
             Extremely professional from start to
             finish. Will be using Elite Luxury
             Limousine again.`,
-            rating: 5
+            rating: 5,
         },
-        
     ];
     return (
-         <section  className="carousel carousel-center max-w-full p-4 space-x-4 overflow-x-scroll  rounded-none relative">
-            {
-                testimonals.map((el, index) => (
-                    <Card className='text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2' key={index}>
+        <ScrollShadow
+            hideScrollBar
+            orientation="horizontal"
+            isEnabled
+            size={300}
+            style={{
+                // @ts-ignore
+                "--gap": "100px",
+                "--duration": `${15}s`,
+            }}
+            className=" max-w-full p-4 space-x-4 overflow-x-scroll  rounded-none relative">
+            <div className=" max-smpl-0 pl-[100px] flex animate-scrolling-banner w-max items-stretch gap-[20px]">
+                {testimonals.map((el, index) => (
+                    <Card
+                        className="text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2"
+                        key={index}>
                         <h6>{el.name}</h6>
                         <div className="flex">
-            {[...Array(5)].map((_, starIndex) => (
-              <StarIcon key={starIndex} />
-            ))}
-          </div>
-                        {/* <span>{el.date}</span> */}
+                            {[...Array(5)].map((_, starIndex) => (
+                                <StarIcon key={starIndex} />
+                            ))}
+                        </div>
                         <p className="text-default-400">{el.text}</p>
-                </Card>
-      ))
-    }
-    </section>
-        )
-
+                    </Card>
+                ))}
+            </div>
+        </ScrollShadow>
+    );
 }
