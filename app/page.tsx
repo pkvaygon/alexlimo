@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </div>
       </section>
-      {/* <section className=" text-[#D4D4D8] flex-row w-full sm:h-[500px]  flex max-sm:h-[740px]  max-sm:flex-col max-md:flex-row max-md:h-[90vh] max-lg:h-[400px] lg:flex-row ">
+      <section className=" text-[#D4D4D8] flex-row w-full sm:h-[500px]  flex max-sm:h-[740px]  max-sm:flex-col max-md:flex-row max-md:h-[90vh] max-lg:h-[400px] lg:flex-row ">
         <div  className="h-1/2 relative max-sm:h-1/2 max-sm:w-full max-md:w-1/2 max-md:h-full max-lg:w-1/2 max-lg:h-full lg:w-1/2 lg:h-full">
           <Image sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33.3vw, 100vw" src={private_driver} quality={100} alt="order driver" fill priority className="object-cover" />
         </div>
@@ -37,7 +37,7 @@ tradition where integrity and reliability resonate throughout the organization.<
           <Link href="/contact-us" className="px-4 py-2 bg-[#afa581] font-semibold text-md rounded-sm text-white">Contact Us</Link>
           </div>
         </div>
-      </section> */}
+      </section>
       <article className="w-full relative max-sm:my-3">
         <div className=' font-bartkey absolute z-10 text-lg sm:text-[36px]  left-16 top-24 text-white'>Make your trip an unforgettable moment together.</div>
         <Image priority className="brightness-50 w-full h-[300px] object-cover object-top backdrop-brightness-50" src={ad} alt="Order limo"/>
