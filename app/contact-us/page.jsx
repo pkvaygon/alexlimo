@@ -4,8 +4,10 @@ import Image from 'next/image';
 import { Card, CardHeader, CardBody, CardFooter, Textarea, Input } from '@nextui-org/react';
 import { Button } from '@nextui-org/react';
 import { sendContactUsForm } from '@/actions/emailjs';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function ContactUsPage() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [contactUs, setContactUs] = React.useState({
     name: "",
     phone_number: "",
@@ -25,18 +27,22 @@ export default function ContactUsPage() {
 
   const onSubmit = async () => {
     try {
-      // Проверка наличия обязательных полей
       if (!contactUs.name || !contactUs.email || !contactUs.phone_number) {
         console.error("Error: Name, email, and phone number are required.");
         return alert('fill your info please')
       }
-  
-      console.log(contactUs);
-      await sendContactUsForm(contactUs);
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not available yet");
+        alert("Execute recaptcha not available yet likely meaning key not recaptcha key not set")
+        return;
+      }
+      executeRecaptcha("formSubmitted").then(async () => {
+        await sendContactUsForm(contactUs);
+        console.log('execute console')
+      })
       setFormSubmitted(true);
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Добавьте обработку ошибок здесь
     }
   };
 

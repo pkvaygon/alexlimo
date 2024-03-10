@@ -8,6 +8,7 @@ export default function Testimonals() {
     const testimonals = [
         {
             name: "Garret Knorr",
+            role: "Reginal VIP",
             // date: "3 days ago",
             text: `I've used many limo services for many
             decades but found Elite Luxury Limousine
@@ -18,6 +19,7 @@ export default function Testimonals() {
         },
         {
             name: "Robert Williams",
+            role: "Workplace Advisor",
             // date: "18 days ago",
             text: `Our driver was waiting for us when we
             arrived at the airport. The drive was smooth
@@ -28,6 +30,7 @@ export default function Testimonals() {
         },
         {
             name: "Elizabeth Alvarez",
+            role: "Office Manager",
             // date: "1 month ago",
             text: `The quality of service and their
             flexibility is top notch. I’ve been
@@ -38,6 +41,7 @@ export default function Testimonals() {
         },
         {
             name: "Mitch Mccrea",
+            role: "Associate Professor",
             // date: "1 month ago",
             text: `We were happy with our drivers Alexis and
             Chris. They were able to get us through
@@ -49,6 +53,7 @@ export default function Testimonals() {
         },
         {
             name: "Scott A",
+            role: "Mechanical Engineer",
             // date: "1 month ago",
             text: `Top notch service. Gladly recommend this
             company. Will use again for sure!`,
@@ -56,6 +61,7 @@ export default function Testimonals() {
         },
         {
             name: "Phillip Weber",
+            role: "CEO",
             // date: "1 month ago",
             text: `Our driver was waiting for us when
             we arrived at the airport as they track
@@ -84,7 +90,8 @@ export default function Testimonals() {
                     <Card
                         className="text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2"
                         key={index}>
-                        <h6>{el.name}</h6>
+                        <h6 className="text-lg">{el.name}</h6>
+                        <span className="text-sm">{el.role}</span>
                         <div className="flex">
                             {[...Array(5)].map((_, starIndex) => (
                                 <StarIcon key={starIndex} />
