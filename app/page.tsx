@@ -33,7 +33,7 @@ export default function Home() {
 the industry. We are family owned and locally operated and deeply rooted in
 tradition where integrity and reliability resonate throughout the organization.</p>
             <h1 className="font-space max-sm:text-xl max-md:text-3xl max-lg:text-4xl lg:text-5xl leading-10 non-italic font-medium">We are Exceptional <br/> Private Drivers</h1>
-            <p  className="font-inter max-sm:text-[14px] lg:text-lg">All our drivers are professionally licensed chauffer with years of experience delivering unapparelled service where compromise doesn&apos;t exist. We love what we do!</p>
+            <p  className="font-inter max-sm:text-[14px] lg:text-lg">All our drivers are professionally licensed chauffeur with years of experience delivering unapparelled service where compromise doesn&apos;t exist. We love what we do!</p>
           <Link href="/contact-us" className="px-4 py-2 bg-[#afa581] font-semibold text-md rounded-sm text-white">Contact Us</Link>
           </div>
         </div>
