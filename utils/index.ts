@@ -61,7 +61,8 @@ export const vehicles: any[] = [
     price: "Request a Quote",
   },
 ];
-// replace
+
+// export const vehicles = [];
 
 export const airports: AiportProps[] = [
   {
