@@ -136,8 +136,8 @@ React.useEffect(() => {
                         width="600"
                       height="600"
                       alt="alexlimo"
-                      src={el?.image}
-                      className="object-cover"
+                        src={el?.image}
+                      className="object-contain"
                     />
                     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                       <div className="flex flex-grow gap-2 items-center">

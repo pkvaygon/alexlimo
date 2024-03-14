@@ -18,7 +18,8 @@ export default function Blog() {
         },
         {
             id: 'corporate',
-            image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031489/corporate_meeting_ioons7.jpg',
+            // image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031489/corporate_meeting_ioons7.jpg',
+            image: '/corporate meeting.jpg',
             label: 'Corporate Serviсes',
             description: `We are committed to providing our corporate limo service clientele with the best corporate transportation service
         available. Whether you’re entertaining existing or potential clients, company employees or just simply traveling to business
@@ -28,7 +29,8 @@ export default function Blog() {
         },
         {
             id: 'tours',
-            image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/privatetour_badhzi.jpg',
+            // image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/privatetour_badhzi.jpg',
+            image: '/private excursion.jpg',
             label: 'Private Excursion & Tours',
             description: `We offer charter services in order to afford you a way to explore in luxury many well-known beautiful and
         exciting locations throughout Chicagoland. Our clients travel in the ultimate comfort driven by our professional chauffeurs that
@@ -38,7 +40,8 @@ export default function Blog() {
         },
         {
             id: 'events',
-            image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031549/events2_nkd62t.jpg',
+            // image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1708031549/events2_nkd62t.jpg',
+            image: '/events pic 03142024 four.jpg',
             label: 'Events & Special Occasions',
             description: `We specialize in providing you the highest level of professional transportation limousine services for any and all
         of your big moment and once-in-a-lifetime events and occasions. Let our professional chauffeurs drive you to that special

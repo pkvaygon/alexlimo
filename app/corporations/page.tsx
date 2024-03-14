@@ -1,5 +1,5 @@
 import Link from "next/link";
-import private_driver from "@/public/benze.jpg";
+import private_driver from "@/public/corporate page pic 03142024 three.jpg";
 import Image from "next/image";
 import ad from "@/public/corporation_banner.jpg";
 import React from "react";

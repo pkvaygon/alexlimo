@@ -26,28 +26,19 @@ export default imageByIndex;
 export const vehicles: any[] = [
   {
     image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/bus_car_lwnnke.png",
-    name: "CHEVROLET",
-    passengers: 6,
-    bags: 6,
-    // price: 162.14,
-    price: "Request a Quote",
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/bmw_car_chrgzx.png",
-    name: "BMW MX 2024",
-    passengers: 4,
-    bags: 3,
-    // price: 200.0,
-    price: "Request a Quote",
-  },
-  {
-    image:
       "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/lincolnNavigator_io4nn6.png",
     name: "Cadillac Escalade ESV",
     passengers: 6,
     bags: 6,
+    // price: 180.14,
+    price: "Request a Quote",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710441887/alexlimoimg/5bc458ebc897c_nmcpgs.jpg",
+    name: "Cadillac XTS",
+    passengers: 2,
+    bags: 3,
     // price: 180.14,
     price: "Request a Quote",
   },
@@ -61,8 +52,6 @@ export const vehicles: any[] = [
     price: "Request a Quote",
   },
 ];
-
-// export const vehicles = [];
 
 export const airports: AiportProps[] = [
   {
