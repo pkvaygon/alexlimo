@@ -26,7 +26,17 @@ export default imageByIndex;
 export const vehicles: any[] = [
   {
     image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/lincolnNavigator_io4nn6.png",
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710453826/alexlimoimg/bus_car_q3cdv1.png",
+    name: "22 Passenger Executive Minibus",
+    passengers: 22,
+    bags: 22,
+    // price: 180.14,
+    price: "Request a Quote",
+  },
+  {
+    image:
+      // "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/lincolnNavigator_io4nn6.png",
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710454351/alexlimoimg/lincolnNavigator_vl4zhw.jpg",
     name: "Cadillac Escalade ESV",
     passengers: 6,
     bags: 6,
