@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Contact Us',
+    title: 'Privacy & Policy',
 }
 
 export default function PrivacyAndPolicy() {

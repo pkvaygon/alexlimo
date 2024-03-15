@@ -7,7 +7,7 @@ import React from "react";
 import CorporationsForm from "@/components/corporations-form";
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Corporations',
 }
 
 export default function CorporationsPage() {
