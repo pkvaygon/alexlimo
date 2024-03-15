@@ -5,13 +5,6 @@ import SearchLocation from "@/components/FormFiles/SearchLocation";
 import SelectService from "@/components/FormFiles/SelectService";
 import Map from '@/components/GoogleMapFiles/GoogleMap';
 
-export const metadata = {
-  title: {
-    template: '%s | Reservation',
-    default: 'Reservation',
-  },
-
-}
 
 export default function BookOnline() {
   return (
