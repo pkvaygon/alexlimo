@@ -1,10 +1,5 @@
 import { NavlinksProps, AiportProps, ReviewProps } from "@/types";
 
-import busCar from "@/public/bus_car.png";
-import bmwCar from "@/public/bmw_car.png";
-import jeepCar from "@/public/jeep_car.png";
-import mersBus from "@/public/mers_bus.png";
-
 import image1 from "@/public/image_1.png";
 import image2 from "@/public/image_2.png";
 import image3 from "@/public/purplegirl.jpg";
