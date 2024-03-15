@@ -1,5 +1,6 @@
 import Link from "next/link";
 import private_driver from "@/public/corporate page pic 03142024 three.jpg";
+import corp2 from '@/public/createaccountcorp.jpg'
 import Image from "next/image";
 import ad from "@/public/corporation_banner.jpg";
 import React from "react";
@@ -51,7 +52,7 @@ export default function CorporationsPage() {
         <div className="h-1/2 relative max-sm:h-1/2 max-sm:w-full max-md:w-1/2 max-md:h-full max-lg:w-1/2 max-lg:h-full lg:w-3/5 lg:h-full">
           <Image
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33.3vw, 100vw"
-            src={private_driver}
+            src={corp2}
             quality={100}
             alt="order driver"
             fill

@@ -131,13 +131,12 @@ React.useEffect(() => {
                 {vehicleSelected === false?
                 vehicles.map((el,index)=>(
                   <div className="col-span-1" key={index} onClick={()=> onVehicleSelected(el)} >
-                    <Card    isFooterBlurred className=" hover:drop-shadow-xl w-full h-[300px]">
-                    <CldImage
-                        width="600"
-                      height="600"
+                    <Card isFooterBlurred className="relative hover:drop-shadow-xl w-full h-[300px]">
+                      <CldImage
+                        fill
                       alt="alexlimo"
                         src={el?.image}
-                      className="object-contain"
+                      className="object-contain object-center"
                     />
                     <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
                       <div className="flex flex-grow gap-2 items-center">

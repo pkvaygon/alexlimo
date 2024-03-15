@@ -26,39 +26,34 @@ export default imageByIndex;
 export const vehicles: any[] = [
   {
     image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710453826/alexlimoimg/bus_car_q3cdv1.png",
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710473579/alexlimoimg/bus_car_mf08ez.png",
     name: "22 Passenger Executive Minibus",
     passengers: 22,
     bags: 22,
-    // price: 180.14,
     price: "Request a Quote",
   },
   {
     image:
-      // "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929860/lincolnNavigator_io4nn6.png",
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710454351/alexlimoimg/lincolnNavigator_vl4zhw.jpg",
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710473805/alexlimoimg/lincolnNavigator_zcvthv.png",
     name: "Cadillac Escalade ESV",
     passengers: 6,
     bags: 6,
-    // price: 180.14,
     price: "Request a Quote",
   },
   {
     image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710441887/alexlimoimg/5bc458ebc897c_nmcpgs.jpg",
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710473700/alexlimoimg/cadillacxts_erdtsh.png",
     name: "Cadillac XTS",
     passengers: 2,
     bags: 3,
-    // price: 180.14,
     price: "Request a Quote",
   },
   {
     image:
-      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1706929861/van_sprinter_lligkw.png",
-    name: "SPRINTER VAN",
-    passengers: 10,
-    bags: 8,
-    // price: 110.0,
+      "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474291/alexlimoimg/38passenger_tbgnvk.png",
+    name: "38 Passenger Executive Minibus",
+    passengers: 38,
+    bags: 38,
     price: "Request a Quote",
   },
 ];
