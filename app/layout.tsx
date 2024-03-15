@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     siteName: 'ELite Luxury Limousine',
     images: [
       {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        url: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico', 
         width: 800,
         height: 600,
       },
       {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+        url: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico', 
         width: 1800,
         height: 1600,
         alt: 'Alex limo',
@@ -95,12 +95,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/croplogo.png',
-    shortcut: '/croplogo.png',
-    apple: '/croplogo.png',
+    icon: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico',
+    shortcut: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico',
+    apple: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico',
     other: {
-      rel: '/croplogo.png',
-      url: '/croplogo.png',
+      rel: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico',
+      url: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710474865/alexlimoicons/favicon_et4rd2.ico',
     },
   },
 };

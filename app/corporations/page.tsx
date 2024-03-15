@@ -1,10 +1,15 @@
-import Link from "next/link";
+import { Metadata } from 'next'
 import private_driver from "@/public/corporate page pic 03142024 three.jpg";
 import corp2 from '@/public/createaccountcorp.jpg'
 import Image from "next/image";
 import ad from "@/public/corporation_banner.jpg";
 import React from "react";
 import CorporationsForm from "@/components/corporations-form";
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+}
+
 export default function CorporationsPage() {
   return (
     <React.Fragment>

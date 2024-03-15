@@ -6,6 +6,10 @@ import { Button } from '@nextui-org/react';
 import { sendContactUsForm } from '@/actions/emailjs';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
+export const metadata = {
+  title: 'Contact Us',
+}
+
 export default function ContactUsPage() {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [contactUs, setContactUs] = React.useState({
