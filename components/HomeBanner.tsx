@@ -13,7 +13,7 @@ export default function HomeBanner() {
     slides: number[]
     options?: EmblaOptionsType
   }
-  const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 5000})])
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay({delay: 3000})])
     return (
         <section className="w-full h-full mt-[68px] md:mt-[80px]">
         <div className="embla">
@@ -24,12 +24,11 @@ export default function HomeBanner() {
               <div className="embla__slide__number">
               </div>
               <Image
-                quality={100}
                 priority
                 sizes='100vw'
                 className="embla__slide__img"
                 src={imageByIndex(index)}
-                alt="Your alt text"
+                alt="Elite Luxury Limousine"
               />
             </div>
           ))}

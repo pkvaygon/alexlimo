@@ -74,33 +74,36 @@ export default function Testimonals() {
         },
     ];
     return (
-        <ScrollShadow
-            hideScrollBar
-            orientation="horizontal"
-            isEnabled
-            size={300}
-            style={{
-                // @ts-ignore
-                "--gap": "100px",
-                "--duration": `${15}s`,
-            }}
-            className=" max-w-full p-4 space-x-4 overflow-x-scroll  rounded-none relative">
-            <div className=" max-smpl-0 pl-[100px] flex animate-scrolling-banner w-max items-stretch gap-[20px]">
-                {testimonals.map((el, index) => (
-                    <Card
-                        className="text-[#fff] w-[300px] carousel-item h-auto p-4 bg-black/50 flex flex-col gap-2"
-                        key={index}>
-                        <h6 className="text-lg">{el.name}</h6>
-                        <span className="text-sm">{el.role}</span>
-                        <div className="flex">
-                            {[...Array(5)].map((_, starIndex) => (
-                                <StarIcon key={starIndex} />
-                            ))}
-                        </div>
-                        <p className="text-default-400">{el.text}</p>
-                    </Card>
-                ))}
-            </div>
-        </ScrollShadow>
+        // <ScrollShadow
+        //     hideScrollBar
+        //     orientation="horizontal"
+        //     isEnabled
+        //     size={300}
+        //     style={{
+        //         // @ts-ignore
+        //         "--gap": "100px",
+        //         "--duration": `${15}s`,
+        //     }}
+        //     className="max-w-full p-4 space-x-4 overflow-x-scroll  rounded-none relative">
+        //     <div className=" max-smpl-0 pl-[100px] flex animate-scrolling-banner w-max items-stretch gap-[20px]">
+        <div
+            className="grid overflow-x-auto max-sm:flex  max-sm:px-5 grid-cols-6 gap-2 px-1">
+            {testimonals.map((el, index) => (
+                <Card
+                    className="text-[#fff] w-full h-[300px] carousel-item p-4 bg-black/50 flex flex-col gap-2"
+                    key={index}>
+                    <h6 className="text-md">{el.name}</h6>
+                    <span className="text-sm">{el.role}</span>
+                    <div className="flex">
+                        {[...Array(5)].map((_, starIndex) => (
+                            <StarIcon key={starIndex} />
+                        ))}
+                    </div>
+                    <p className="text-default-400 text-xs">{el.text}</p>
+                </Card>
+            ))}
+        </div>
+        //     </div>
+        // </ScrollShadow>
     );
 }

@@ -26,9 +26,9 @@ const config: Config = {
         },
       },
       animation: {
-        "scrolling-banner": "scrolling-banner var(--duration) linear infinite",
+        "scrolling-banner": "scrolling-banner 5s linear infinite",
         "scrolling-banner-vertical":
-          "scrolling-banner-vertical var(--duration) linear infinite",
+          "scrolling-banner-vertical 5s linear infinite",
       },
     },
   },
