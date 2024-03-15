@@ -13,7 +13,7 @@ export default function BlogCards({ images, ...props }: { images: BlogCardsProps
                             radius="none"
                             removeWrapper
                             alt={el.label}
-                            className=" max-md:h-[340px] w-full flex-none object-cover h-[340px] object-bottom"
+                            className=" max-md:h-[340px] w-full flex-none object-cover h-[340px] object-top"
                             src={el.image.toString()}
                         />
                         <div className="px-4 py-5">
