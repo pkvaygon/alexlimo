@@ -13,7 +13,6 @@ export const navlinks: NavlinksProps[] = [
 ];
 
 export const images: any[] = [image1, image2, image3];
-
 const imageByIndex = (index: number): string => images[index % images.length];
 
 export default imageByIndex;
