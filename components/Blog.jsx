@@ -1,7 +1,4 @@
-import airport_transportation from '@/public/airtransport.jpg'
-import corporate from '@/public/corporate.jpg'
-import privatetour from '@/public/privatetour.jpg'
-import events from '@/public/events.jpg'
+
 import BlogCards from './BlogCards';
 
 
@@ -9,7 +6,8 @@ export default function Blog() {
     const images = [
         {
             id: 'airport',
-            image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/airtransport_fzsw07.jpg',
+            // image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1706915757/airtransport_fzsw07.jpg',
+            image: 'https://res.cloudinary.com/dxvf93ovn/image/upload/v1710723377/alexlimoimg/airtransport_pkxsdl.jpg',
             label: 'Airport Transportation',
             description: `We are the premier service to utilize for airport transportation service whether it’s to or from the airport. We serve
         all major airports as well as all private jet centers. We offer world class airport car service our chauffeurs go above and beyond to
