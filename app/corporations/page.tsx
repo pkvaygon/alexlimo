@@ -14,8 +14,8 @@ export default function CorporationsPage() {
   return (
     <React.Fragment>
       <section className=" max-sm:mt-3 mt-[36px] pt-10">
-        <article className="w-full shadow-lg relative max-sm:h-[140px] h-[200px] max-sm:my-3">
-          <div className=" font-timesroman text-white absolute z-10 text-sm sm:text-4xl max-sm:left-[10%]  max-sm:top-7 left-16 top-20 max-sm:text-white/70">
+        <article className="w-full shadow-lg relative max-sm:h-[100px] h-[300px] max-sm:my-3">
+          <div className="font-timesroman text-white absolute z-10 text-sm sm:text-5xl max-sm:left-[10%]  max-sm:top-10 left-16 top-[45%] max-sm:text-white/70">
             Make your trip an unforgettable moment together.
           </div>
           <Image
