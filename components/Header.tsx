@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, } from "react";
-import {Navbar,NavbarMenu, NavbarBrand, NavbarContent, NavbarItem, Link,  NavbarMenuToggle, NavbarMenuItem} from "@nextui-org/react";
+import {Navbar,NavbarMenu, NavbarBrand, NavbarContent, NavbarItem, Link,  NavbarMenuToggle, NavbarMenuItem, LinkIcon} from "@nextui-org/react";
 import { usePathname } from 'next/navigation'
 import { navlinks } from "@/utils";
 // import logo from '@/public/White_on_Black-removebg-preview.png'
@@ -28,9 +28,9 @@ const closeMenu = () => {
                     onClick={toggleMenu}
                 />
           <NavbarBrand className="p-0 flex flex-start max-sm:w-[10%] h-full">
-            <div className=" p-0 max-sm:w-full w-full h-full relative">
+            <Link href="/" className=" p-0 max-sm:w-full w-full h-full relative">
             <Image className="object-contain w-full h-full select-none" objectPosition="center"  priority src={logo} alt="logo"/>
-            </div>
+            </Link>
         </NavbarBrand>
         </NavbarContent>
         <NavbarMenu className="dark h-auto text-white py-3 backdrop-blur-sm bg-black/30">
